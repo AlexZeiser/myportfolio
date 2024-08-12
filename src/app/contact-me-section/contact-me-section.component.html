@@ -1,1 +1,69 @@
-<p>contact-me-section works!</p>
+<div id="contact-me-container" class="contact-me-container">
+    <div class="contact-me-container-infos">
+        <div class="headline">
+            <h2>Contact me</h2><img src="./../../assets/img/Arrow.svg" alt="">
+        </div>
+        <div class="headline-info">
+            <div class="headline-info-text">
+                Still not sure if I am the right person for your project? Contact me so I can reassure you. Let us work
+                together
+            </div>
+            <div class="headline-info-mail-phone">
+                <div class="email-div">
+                    <div class="phone-mail" id="mail-icon"></div>
+                    <span class="headline-infos-mailPhone" id="headline-info-mail">
+                        E-mail:&nbsp; <a href="mailto:alex.zeiser.rest@gmail.com">alex.zeiser.rest(at)gmail.com</a>
+                    </span>
+                </div>
+                <br>
+                <div class="phone-div">
+                    <div class="phone-mail" id="phone-icon"></div>
+                    <span class="headline-infos-mailPhone" id="headline-info-phone">
+                        Tel:&nbsp; <a href="tel:+4917622695088">0176 22695088</a>
+                    </span>
+                </div>
+            </div>
+            <div id="contact-me-section-arrow" class="contact-me-section-arrow">
+                <div id="contact-me-section-arrow-div" (click)="navigateToHeader()">
+
+                </div>
+            </div>           
+        </div>
+
+    </div>
+    <div class="container">
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+            <div class="form-name-email-message">
+                <div class="form-name-email">
+                    <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your Name"
+                        required>
+
+                    <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your Email"
+                        required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+
+                </div>
+                <div class="form-message">
+                    <textarea #message="ngModel" minlength="4" [(ngModel)]="contactData.message" id="message"
+                        name="message" placeholder="Your Message" required></textarea>
+
+                    @if(!message.valid && message.touched){
+                    }
+                </div>
+            </div>
+
+            <div class="form-checkbox-button">
+                <div class="form-checkbox">
+                    <input type="checkbox" id="privacyPolicy" name="privacyPolicy" value="Agree">
+                    <label for="privacyPolicy"><span id="i-read">I've read the </span> <span id="privacy">&nbsp;privacy
+                            policy&nbsp;
+                        </span><span id="and-agree">and agree to the processing of my data as outlined.</span></label>
+                </div>
+                <div class="form-button">
+                    <button disabled>Send</button>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</div>
