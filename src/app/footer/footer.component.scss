@@ -77,20 +77,18 @@
         line-height: 16.8px;
         text-align: center;
         cursor: pointer;
-    }
 
-    #legal-notice-btn {
         &:hover {
             color: #02F4BF;
         }
-    }
 
-    #impressum-btn {
-        &:hover {
+        &.active {
             color: #02F4BF;
+            border-bottom: 2px solid #02F4BF;
         }
     }
 }
+
 
 .social-links {
 

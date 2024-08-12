@@ -1,13 +1,13 @@
 <div class="menu-bar">
     <div class="menu">
         <div class="logo">
-            <span id="menu-bar-logo-name" (click)="navigateToHeader()">&lt; AZ &gt;</span>
+            <span id="menu-bar-logo-name" [class.active]="activeButton === 'menu-bar-logo-name'" (click)="navigateToHeader()">&lt; AZ &gt;</span>
         </div>
         <div class="menusystem">
-            <button id="why-me-button" (click)="navigateToWhyMe()">Why Me</button>
-            <button id="skills-button" (click)="navigateToSkills()">Skills</button>
-            <button id="projects-button" (click)="navigateToProjects()">Projects</button>
-            <button id="contact-button" (click)="navigateToContactMe()">Contact</button>
+            <button id="why-me-button" [class.active]="activeButton === 'why-me-button'" (click)="navigateToWhyMe()">Why Me</button>
+            <button id="skills-button" [class.active]="activeButton === 'skills-button'" (click)="navigateToSkills()">Skills</button>
+            <button id="projects-button" [class.active]="activeButton === 'projects-button'" (click)="navigateToProjects()">Projects</button>
+            <button id="contact-button" [class.active]="activeButton === 'contact-button'" (click)="navigateToContactMe()">Contact</button>
         </div>
     </div>
     <div class="change-language-div">

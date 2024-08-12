@@ -49,10 +49,6 @@
         color: #02F4BF;
     }
 
-    .join-skills {
-        cursor: pointer;
-    }
-
 }
 
 .my-projects-section-text {
@@ -75,7 +71,7 @@
     display: flex;
     gap: 24px;
 
-    #github-btn {
+    #github-btn a {
         width: 125px;
         height: 52px;
         border: solid 1px #02F4BF;
@@ -87,7 +83,7 @@
         cursor: pointer;
     }
 
-    #livetest-btn {
+    #livetest-btn a {
         width: 158px;
         height: 52px;
         padding: 15px 30px;
@@ -99,14 +95,14 @@
         cursor: pointer;
     }
 
-    .github-btn {
+    .github-btn a {
         &:hover {
             transition: color 0.3s ease-in-out !important;
             color: #02F4BF !important;
         }
     }
 
-    .livetest-btn {
+    .livetest-btn a {
         &:hover {
             transition: color 0.3s ease-in-out !important;
             color: #E15544 !important;

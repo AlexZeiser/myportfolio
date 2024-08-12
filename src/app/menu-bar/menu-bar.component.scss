@@ -4,13 +4,11 @@
     align-items: center;
     margin-left: 333px;
     margin-right: 333px;
-    margin-top: 48px;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
     height: 100px;
-    z-index: 1000;   
-    width: 100%;     
+    z-index: 1000;
 }
 
 
@@ -43,29 +41,25 @@
     }
 }
 
-#why-me-button {
+.menusystem button {
+    border: none;
+    background: none;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #E15544;
+  
     &:hover {
-        color: #02F4BF;
+      color: #02F4BF;
     }
-}
+  
+    &.active {
+      color: #02F4BF;
+      border-bottom: 2px solid #02F4BF;
+    }
+  }
+  
 
-#skills-button {
-    &:hover {
-        color: #02F4BF;
-    }
-}
-
-#projects-button {
-    &:hover {
-        color: #02F4BF;
-    }
-}
-
-#contact-button {
-    &:hover {
-        color: #02F4BF;
-    }
-}
 
 #change-language-german {
     &:hover {

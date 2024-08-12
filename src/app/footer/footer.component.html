@@ -1,6 +1,6 @@
 <div id="footer" class="footer">
     <div class="footer-left">
-        <span>&lt; AZ &gt;</span>
+        <span (click)="navigateToHeader()">&lt; AZ &gt;</span>
     </div>
     <div class="footer-middle">
         <div class="footer-content">
@@ -16,8 +16,12 @@
     </div>
     <div class="footer-bottom">
         <div class="footer-menusystem-buttons">
-            <button id="legal-notice-btn">Legal notice</button>
-            <button id="impressum-btn">Impressum</button>
+            <button id="legal-notice-btn" 
+                    [class.active]="activeFooterButton === 'legal-notice-btn'" 
+                    (click)="setActiveFooterButton('legal-notice-btn')">Legal notice</button>
+            <button id="impressum-btn" 
+                    [class.active]="activeFooterButton === 'impressum-btn'" 
+                    (click)="setActiveFooterButton('impressum-btn')">Impressum</button>
         </div>
     </div>
 </div>

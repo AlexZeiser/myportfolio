@@ -10,7 +10,13 @@ import { Router } from '@angular/router';
 export class MenuBarComponent {
   constructor(private router: Router) { }
 
-  navigateToHeader(): void {
+  activeButton: string = '';
+
+  setActiveButton(buttonId: string) {
+    this.activeButton = buttonId;
+  }
+
+  navigateToHeader(): void {   
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
@@ -18,6 +24,8 @@ export class MenuBarComponent {
   }
 
   navigateToWhyMe(): void {
+    this.setActiveButton('why-me-button');
+
     this.router.navigate(['/why-me-section'], { fragment: 'why-me-section' }).then(() => {
       const element = document.getElementById('why-me-section');
       if (element) {
@@ -34,6 +42,8 @@ export class MenuBarComponent {
   }
 
   navigateToSkills(): void {
+    this.setActiveButton('skills-button');
+
     this.router.navigate(['/my-skills-section'], { fragment: 'my-skills-section' }).then(() => {
       const element = document.getElementById('my-skills-section');
       if (element) {
@@ -50,6 +60,8 @@ export class MenuBarComponent {
   }
 
   navigateToProjects(): void {
+    this.setActiveButton('projects-button');
+
     this.router.navigate(['/my-projects-section'], { fragment: 'my-projects-section' }).then(() => {
       const element = document.getElementById('my-projects-section');
       if (element) {
@@ -66,6 +78,8 @@ export class MenuBarComponent {
   }
 
   navigateToContactMe(): void {
+    this.setActiveButton('contact-button');
+
     this.router.navigate(['/contact-me-section'], { fragment: 'contact-me-container' }).then(() => {
       const element = document.getElementById('contact-me-container');
       if (element) {
@@ -80,5 +94,4 @@ export class MenuBarComponent {
       }
     });
   }
-
 }
