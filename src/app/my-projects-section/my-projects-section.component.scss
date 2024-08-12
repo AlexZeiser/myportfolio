@@ -1,0 +1,115 @@
+.my-projects-section {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 333px;
+    margin-right: 333px;
+    margin-top: 100px;
+
+}
+
+#my-projects-section {
+    font-size: 54px;
+    font-weight: 500;
+    line-height: 64.8px;
+    color: #E15544;
+}
+#my-projects-section-div{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.my-projects-section-image-div {
+    img {
+        width: 588px;
+        height: 381px;
+    }
+}
+
+.my-projects-section-title {
+    span {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 57.6px;
+        color: #02F4BF;
+    }
+}
+
+.my-projects-section-skills {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .skills {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 25.2px;
+        color: #02F4BF;
+    }
+
+    .join-skills {
+        cursor: pointer;
+    }
+
+}
+
+.my-projects-section-text {
+    span {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 25.2px;
+        color: #02F4BF;
+    }
+}
+
+.my-projects-section-infos-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.my-projects-section-buttons {
+    display: flex;
+    gap: 24px;
+
+    #github-btn {
+        width: 125px;
+        height: 52px;
+        border: solid 1px #02F4BF;
+        padding: 15px 30px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 21.6px;
+        color: #E15544;
+        cursor: pointer;
+    }
+
+    #livetest-btn {
+        width: 158px;
+        height: 52px;
+        padding: 15px 30px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 21.6px;
+        background-color: #02F4BF;
+        color: #0B042D;
+        cursor: pointer;
+    }
+
+    .github-btn {
+        &:hover {
+            transition: color 0.3s ease-in-out !important;
+            color: #02F4BF !important;
+        }
+    }
+
+    .livetest-btn {
+        &:hover {
+            transition: color 0.3s ease-in-out !important;
+            color: #E15544 !important;
+        }
+    }
+}

@@ -1,1 +1,20 @@
-<p>menu-bar works!</p>
+<div class="menu-bar">
+    <div class="menu">
+        <div class="logo">
+            <span id="menu-bar-logo-name" (click)="navigateToHeader()">&lt; AZ &gt;</span>
+        </div>
+        <div class="menusystem">
+            <button id="why-me-button" (click)="navigateToWhyMe()">Why Me</button>
+            <button id="skills-button" (click)="navigateToSkills()">Skills</button>
+            <button id="projects-button" (click)="navigateToProjects()">Projects</button>
+            <button id="contact-button" (click)="navigateToContactMe()">Contact</button>
+        </div>
+    </div>
+    <div class="change-language-div">
+        <div class="change-language">
+            <span id="change-language-german">DE</span>
+            <span>|</span>
+            <span id="change-language-english">EN</span>
+        </div>
+    </div>
+</div>
