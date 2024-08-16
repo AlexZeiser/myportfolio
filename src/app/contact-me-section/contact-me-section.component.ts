@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-me-section',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, TranslateModule],
   templateUrl: './contact-me-section.component.html',
   styleUrls: ['./contact-me-section.component.scss']
 })
@@ -18,7 +19,8 @@ export class ContactMeSectionComponent {
   contactData = {
     name: "",
     email: "",
-    message: ""
+    message: "",
+    privacyPolicy: false
   }
 
   mailTest = false;
@@ -34,8 +36,14 @@ export class ContactMeSectionComponent {
     },
   };
 
+  isFormValid(form: NgForm): boolean {
+    return form.form.valid && 
+    this.contactData.privacyPolicy && 
+    this.contactData.message.trim().length >= 10;;
+  }
+
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+    if (ngForm.submitted && this.isFormValid(ngForm) && !this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
@@ -47,11 +55,12 @@ export class ContactMeSectionComponent {
           },
           complete: () => console.info('Sendevorgang abgeschlossen'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+    } else if (ngForm.submitted && this.isFormValid(ngForm) && this.mailTest) {
       ngForm.resetForm();
       console.info('MailTest aktiv, keine E-Mail gesendet');
     }
   }
+
   navigateToHeader(): void {
     window.scrollTo({
       top: 0,

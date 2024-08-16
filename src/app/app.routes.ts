@@ -15,6 +15,5 @@ export const routes: Routes = [
     { path: 'my-skills-section', component: MySkillsSectionComponent },
     { path: 'my-projects-section', component: MyProjectsSectionComponent },
     { path: 'contact-me-section', component: ContactMeSectionComponent },
-    { path: 'footer', component: FooterComponent },
-    { path: '', redirectTo: 'hero-section', pathMatch: 'full' }
+    { path: 'footer', component: FooterComponent }
 ];

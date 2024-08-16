@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-why-me-section',
   standalone: true,
+  imports: [TranslateModule],
   templateUrl: './why-me-section.component.html',
   styleUrls: ['./why-me-section.component.scss']
 })

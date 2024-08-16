@@ -4,27 +4,27 @@
     </div>
     <div class="why-me-section-infos">
         <div class="why-me-section-why-me-span">
-            <span>Why me</span>
+            <span>{{'why_me' | translate }}</span>
         </div>
         <div class="why-me-section-text-span">
             <span>
-                I am motivated to continuously learn new technologies and develop myself. My ability to solve complex
-                problems and my passion for programming make me a valuable member of your team.
+                {{'motivated_description' | translate }}
             </span>
         </div>
 
         <div class="why-me-section-location">
-            <span id="iam">I am </span>
+            <img src="./../../assets/img/Arrow 5.svg" alt="" style="display: none;">
+            <span id="iam">{{'i_am' | translate }} </span>
             <div class="located-div">
-                <div class="located-main-div">                    
+                <div class="located-main-div">
                     <div id="located-div-image">
                     </div>
                     <div id="located-div-eclipse-image">
                     </div>
-                </div>              
+                </div>
                 <div class="why-me-section-location-spans">
-                    <span class="locatedBerlin">located</span>
-                    <span class="locatedBerlin">in Berlin</span>
+                    <span class="locatedBerlin">{{'located' | translate }}</span>
+                    <span class="locatedBerlin">{{'in_berlin' | translate }}</span>
                 </div>
             </div>
 
@@ -35,8 +35,8 @@
             <div class="relocate-div">
                 <img id="relocate-image" src="./../../assets/img/relocate-icon.svg" alt="">
                 <div class="why-me-section-relocation-spans">
-                    <span>open to</span>
-                    <span>relocate</span>
+                    <span>{{'open_to' | translate }}</span>
+                    <span>{{'relocate' | translate }}</span>
                 </div>
             </div>
 
@@ -48,19 +48,20 @@
                 <div id="remote-image">
 
                 </div>
-                
+
                 <div class="why-me-section-remote-spans">
-                    <span>open to</span>
-                    <span>work remote</span>
+                    <span>{{'oppen_to' | translate }}</span>
+                    <span>{{'work_remote' | translate }}</span>
                 </div>
             </div>
 
-            <img src="./../../assets/img/Arrow 4.svg" alt="">
-            <img src="./../../assets/img/Arrow 01.svg" alt="">
+            <img id="arrow_from_right_to_up" src="./../../assets/img/Arrow 4.svg" alt="">
+            <img id="arrow_from_up_to_bottom" src="./../../assets/img/Arrow 01.svg" alt="">            
         </div>
+        <img id="arrow_from_up_to_bottom_mobile" src="./../../assets/img/arrow_up_to_bottom_mobile.svg" style="display: none;" alt="">
 
         <div class="why-me-section-talk-button">
-            <button (click)="navigateToContactMe()">Let's talk</button>
+            <button (click)="navigateToContactMe()">{{'lets_talk' | translate }}</button>
         </div>
     </div>
 </div>

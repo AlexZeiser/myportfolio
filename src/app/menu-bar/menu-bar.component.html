@@ -1,20 +1,151 @@
-<div class="menu-bar">
+<!-- <div class="menu-bar">
     <div class="menu">
         <div class="logo">
-            <span id="menu-bar-logo-name" [class.active]="activeButton === 'menu-bar-logo-name'" (click)="navigateToHeader()">&lt; AZ &gt;</span>
+            <span id="menu-bar-logo-name" [class.active]="activeButton === 'menu-bar-logo-name'"
+                (click)="navigateToHeader()">&lt; AZ &gt;</span>
         </div>
         <div class="menusystem">
-            <button id="why-me-button" [class.active]="activeButton === 'why-me-button'" (click)="navigateToWhyMe()">Why Me</button>
-            <button id="skills-button" [class.active]="activeButton === 'skills-button'" (click)="navigateToSkills()">Skills</button>
-            <button id="projects-button" [class.active]="activeButton === 'projects-button'" (click)="navigateToProjects()">Projects</button>
-            <button id="contact-button" [class.active]="activeButton === 'contact-button'" (click)="navigateToContactMe()">Contact</button>
+            <button id="why-me-button" [class.active]="activeButton === 'why-me-button'" (click)="navigateToWhyMe()">{{'header_AboutMe' | translate }}</button>
+            <button id="skills-button" [class.active]="activeButton === 'skills-button'"
+                (click)="navigateToSkills()">{{'header_Skills' | translate }}</button>
+            <button id="projects-button" [class.active]="activeButton === 'projects-button'"
+                (click)="navigateToProjects()">{{'header_Projects' | translate }}</button>
+            <button id="contact-button" [class.active]="activeButton === 'contact-button'"
+                (click)="navigateToContactMe()">{{'header_Contact' | translate }}</button>
         </div>
     </div>
     <div class="change-language-div">
         <div class="change-language">
-            <span id="change-language-german">DE</span>
+            <span id="change-language-german" 
+                  [class.active]="activeLanguage === 'de'" 
+                  (click)="changeLanguage('de')">DE</span>
             <span>|</span>
-            <span id="change-language-english">EN</span>
+            <span id="change-language-english" 
+                  [class.active]="activeLanguage === 'en'" 
+                  (click)="changeLanguage('en')">EN</span>
+        </div>
+    </div>
+    <div class="burger-menu" style="display: none;">
+        <img id="burger-menu-open" src="./../../assets/img/burger-menu-icon.svg" alt="Burger Menu Icon">
+    </div>
+    <div class="burger-menu-div-open" style="display: none;">        
+        <img id="burger-menu-close" src="./../../assets/img/burger-menu-icon-close.svg" alt="Burger Menu Icon Close">        
+    </div>
+
+</div> --><!-- 
+<div class="menu-bar">
+    <div class="menu">
+        <div class="logo">
+            <span id="menu-bar-logo-name" [class.active]="activeButton === 'menu-bar-logo-name'"
+                (click)="navigateToHeader()">&lt; AZ &gt;</span>
+        </div>
+        <div class="menusystem">
+            <button id="why-me-button" [class.active]="activeButton === 'why-me-button'"
+                (click)="navigateToWhyMe()">{{'header_AboutMe' | translate }}</button>
+            <button id="skills-button" [class.active]="activeButton === 'skills-button'"
+                (click)="navigateToSkills()">{{'header_Skills' | translate }}</button>
+            <button id="projects-button" [class.active]="activeButton === 'projects-button'"
+                (click)="navigateToProjects()">{{'header_Projects' | translate }}</button>
+            <button id="contact-button" [class.active]="activeButton === 'contact-button'"
+                (click)="navigateToContactMe()">{{'header_Contact' | translate }}</button>
+        </div>
+    </div>
+    <div class="change-language-div">
+        <div class="change-language">
+            <span id="change-language-german" [class.active]="activeLanguage === 'de'"
+                (click)="changeLanguage('de')">DE</span>
+            <span>|</span>
+            <span id="change-language-english" [class.active]="activeLanguage === 'en'"
+                (click)="changeLanguage('en')">EN</span>
+        </div>
+    </div>
+    <div class="burger-menu" (click)="toggleMenu()">
+        <img *ngIf="!isMenuOpen" id="burger-menu-open" src="./../../assets/img/burger-menu-icon.svg" alt="Burger Menu Icon">
+        <img *ngIf="isMenuOpen" id="burger-menu-close" src="./../../assets/img/burger-menu-icon-close.svg" alt="Burger Menu Icon Close">
+      </div>
+      
+
+</div>
+
+<div class="burger-menu-div-open" *ngIf="isMenuOpen">
+    <div class="overlay-content">
+        <div class="menusystem">
+            <button id="why-me-button" [class.active]="activeButton === 'why-me-button'"
+                (click)="navigateToWhyMe()">{{'header_AboutMe' | translate }}</button>
+            <button id="skills-button" [class.active]="activeButton === 'skills-button'"
+                (click)="navigateToSkills()">{{'header_Skills' | translate }}</button>
+            <button id="projects-button" [class.active]="activeButton === 'projects-button'"
+                (click)="navigateToProjects()">{{'header_Projects' | translate }}</button>
+            <button id="contact-button" [class.active]="activeButton === 'contact-button'"
+                (click)="navigateToContactMe()">{{'header_Contact' | translate }}</button>
+        </div>
+        <div class="change-language-div">
+            <div class="change-language">
+                <span id="change-language-german" [class.active]="activeLanguage === 'de'"
+                    (click)="changeLanguage('de')">DE</span>
+                <span>|</span>
+                <span id="change-language-english" [class.active]="activeLanguage === 'en'"
+                    (click)="changeLanguage('en')">EN</span>
+            </div>
+        </div>
+
+    </div>
+</div> -->
+
+<div class="menu-bar" [ngClass]="{'menu-open': isMenuOpen}">
+    <div class="menu">
+        <div class="logo" [ngClass]="{'menu-open': isMenuOpen}">
+            <span id="menu-bar-logo-name" [class.active]="activeButton === 'menu-bar-logo-name'"
+                (click)="navigateToHeader()">&lt; AZ &gt;</span>
+        </div>
+        <div class="menusystem">
+            <button id="why-me-button" [class.active]="activeButton === 'why-me-button'"
+                (click)="navigateToWhyMe()">{{'header_AboutMe' | translate }}</button>
+            <button id="skills-button" [class.active]="activeButton === 'skills-button'"
+                (click)="navigateToSkills()">{{'header_Skills' | translate }}</button>
+            <button id="projects-button" [class.active]="activeButton === 'projects-button'"
+                (click)="navigateToProjects()">{{'header_Projects' | translate }}</button>
+            <button id="contact-button" [class.active]="activeButton === 'contact-button'"
+                (click)="navigateToContactMe()">{{'header_Contact' | translate }}</button>
+        </div>
+    </div>
+    <div class="change-language-div">
+        <div class="change-language">
+            <span id="change-language-german" [class.active]="activeLanguage === 'de'"
+                (click)="changeLanguage('de')">DE</span>
+            <span>|</span>
+            <span id="change-language-english" [class.active]="activeLanguage === 'en'"
+                (click)="changeLanguage('en')">EN</span>
+        </div>
+    </div>
+    <div class="burger-menu" (click)="toggleMenu()">
+        <img *ngIf="!isMenuOpen" id="burger-menu-open" src="./../../assets/img/burger-menu-icon.svg"
+            alt="Burger Menu Icon">
+        <img *ngIf="isMenuOpen" id="burger-menu-close" src="./../../assets/img/burger-menu-icon-close.svg"
+            alt="Burger Menu Icon Close">
+    </div>
+</div>
+
+<div class="burger-menu-div-open" *ngIf="isMenuOpen">
+    <div class="overlay-content">
+        <div class="menusystem">
+            <button class="ovelay-menu-fs" id="why-me-button" [class.active]="activeButton === 'why-me-button'"
+                (click)="navigateToWhyMe()">{{'header_AboutMe' | translate }}</button>
+            <button class="ovelay-menu-fs" id="skills-button" [class.active]="activeButton === 'skills-button'"
+                (click)="navigateToSkills()">{{'header_Skills' | translate }}</button>
+            <button class="ovelay-menu-fs" id="projects-button" [class.active]="activeButton === 'projects-button'"
+                (click)="navigateToProjects()">{{'header_Projects' | translate }}</button>
+            <button class="ovelay-menu-fs" id="contact-button" [class.active]="activeButton === 'contact-button'"
+                (click)="navigateToContactMe()">{{'header_Contact' | translate }}</button>
+        </div>
+        <div class="change-language-div">
+            <div class="change-language">
+                <span class="ovelay-menu-fs" id="change-language-german" [class.active]="activeLanguage === 'de'"
+                    (click)="changeLanguage('de')">DE</span>
+                <span class="ovelay-menu-fs">|</span>
+                <span class="ovelay-menu-fs" id="change-language-english" [class.active]="activeLanguage === 'en'"
+                    (click)="changeLanguage('en')">EN</span>
+            </div>
         </div>
     </div>
 </div>

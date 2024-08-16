@@ -35,7 +35,7 @@
     align-items: center;
 
     #footer-content-job {
-        font-size: 12px;
+        font-size: 13px;
         font-weight: 500;
         line-height: 12px;
         color: #E15544;
@@ -66,16 +66,14 @@
 .footer-menusystem-buttons {
     display: flex;
     gap: 10px;
+    padding-left: 80px;
 
     button {
         border: none;
-        width: 116.41px;
-        height: 28.33px;
         color: #E15544;
         font-size: 14px;
         font-weight: 400;
         line-height: 16.8px;
-        text-align: center;
         cursor: pointer;
 
         &:hover {
@@ -93,8 +91,7 @@
 .social-links {
 
     #img-github,
-    #img-email,
-    #img-linkedin {
+    #img-email {
         cursor: pointer;
         width: 30px;
         height: 29.26px;
@@ -118,11 +115,110 @@
         }
     }
 
-    #img-linkedin {
-        background-image: url('./../../assets/img/linkedin-button.svg');
+}
+
+.social-links-mobile {
+
+    #img-github-mobile,
+    #img-email-mobile {
+        cursor: pointer;
+        width: 30px;
+        height: 29.26px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #img-github-mobile {
+        background-image: url('./../../assets/img/github-button.svg');
 
         &:hover {
-            background-image: url('./../../assets/img/linkedin-button-other.svg');
+            background-image: url('./../../assets/img/github-button-other.svg');
         }
+    }
+
+    #img-email-mobile {
+        background-image: url('./../../assets/img/email-button.svg');
+
+        &:hover {
+            background-image: url('./../../assets/img/email-button-other.svg');
+        }
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 1860px) {
+    .footer {
+        margin-left: 233px;
+        margin-right: 233px;
+    }
+}
+
+@media screen and (max-width: 1760px) {
+    .footer {
+        margin-left: 133px;
+        margin-right: 133px;
+    }
+}
+
+@media screen and (max-width: 1560px) {
+    .footer {
+        margin-left: 33px;
+        margin-right: 33px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+
+    .footer-content {
+        justify-content: center;
+
+        #footer-content-job {
+            display: none !important;
+        }
+    }
+
+    .footer-left {
+        align-self: center;
+        padding-bottom: 20px;
+    }
+
+    .social-links {
+        display: none;
+    }
+
+    .social-links-mobile {
+        display: flex !important;
+        gap: 100px;
+        padding-bottom: 50px;
+    }
+
+    .footer-menusystem-buttons {
+        padding-left: 0px;
+        flex-direction: column;
+    }
+
+    .footer-middle {
+        padding-bottom: 40px;
+    }
+
+    .footer {
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+
+    .footer-bottom {
+        margin-top: 0px;
+    }
+
+    .footer-menusystem-buttons {
+        padding-left: 0px;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+@media screen and (max-width: 700px) {    
+
+    .social-links-mobile {        
+        padding-bottom: 50px;
     }
 }

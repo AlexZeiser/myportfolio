@@ -1,9 +1,17 @@
 <div id="my-projects-section-div">
-    <div id="my-projects-section">My Projects</div>
+    <div id="my-projects-section">{{'my_projects' | translate }}</div>
 </div>
 <div class="my-projects-section">
     <div class="my-projects-section-image-div">
         <img src="./../../assets/img/join-icon.svg" alt="">
+        <div class="my-projects-section-buttons-mobile" style="display: none;">
+            <button class="github-btn-mobile" id="github-btn-mobile">
+                <a href="https://github.com/" target="_blank">GitHub</a>
+            </button>
+            <button class="livetest-btn-mobile" id="livetest-btn-mobile">
+                <a href="https://join-155.developerakademie.net/" target="_blank">Live Test</a>
+            </button>
+        </div>
     </div>
     <div class="my-projects-section-infos-div">
         <div class="my-projects-section-title">
@@ -40,13 +48,12 @@
         </div>
         <div class="my-projects-section-text">
             <span>
-                Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions,
-                assign users and categories.
+                {{'task_manager_description' | translate }}
             </span>
         </div>
         <div class="my-projects-section-buttons">
             <button class="github-btn" id="github-btn">
-                <a href="https://github.com/" target="_blank">GitHub</a> 
+                <a href="https://github.com/" target="_blank">GitHub</a>
             </button>
             <button class="livetest-btn" id="livetest-btn">
                 <a href="https://join-155.developerakademie.net/" target="_blank">Live Test</a>

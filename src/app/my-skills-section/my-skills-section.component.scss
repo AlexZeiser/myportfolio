@@ -3,8 +3,8 @@
     flex-direction: column;
     margin-left: 333px;
     margin-right: 333px;
-    margin-top: 100px;
     gap: 20px;
+    height: 35vh;
 }
 
 .my-skills-title {
@@ -26,4 +26,106 @@
 
 .my-skills-undercontainer {
     width: calc(100% / 6);
+}
+
+.my-skills-section-talk-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    button {
+        width: 208px;
+        height: 52px;
+        padding: 15px 30px;
+        color: #0B042D;
+        background-color: #02F4BF;
+        font-size: 22px;
+        line-height: 21.6px;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:hover {
+            transition: color 0.3s ease-in-out;
+            color: #E15544;
+        }
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 1860px) {
+    .my-skills-section {
+        margin-left: 233px;
+        margin-right: 233px;
+    }
+}
+
+@media screen and (max-width: 1760px) {
+    .my-skills-section {
+        margin-left: 133px;
+        margin-right: 133px;
+    }
+}
+
+@media screen and (max-width: 1560px) {
+    .my-skills-section {
+        margin-left: 33px;
+        margin-right: 33px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+
+
+    .my-skills-undercontainer {
+        width: calc(100% / 3);
+    }
+
+    .my-skills-section {
+        text-align: center;
+        margin-top: 50px;
+        height: 55vh;
+    }
+
+    .my-skills-text-with-img {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        img {
+            width: 24px;
+            height: 96px;
+        }
+
+        span {
+            color: #02F4BF;
+        }
+
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .my-skills-section {        
+        height: 50vh;
+    }
+
+    .my-skills-title {
+        font-size: 30px;
+    }
+
+    .my-skills-undercontainer {
+        img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    .my-skills-section-talk-button {
+        button {
+            width: 175px;
+            height: 48px;
+            font-size: 16px;
+        }
+    }
 }

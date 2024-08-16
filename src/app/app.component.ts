@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component,inject, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { HeroSectionComponent } from "./hero-section/hero-section.component";
@@ -7,6 +7,7 @@ import { MySkillsSectionComponent } from './my-skills-section/my-skills-section.
 import { MyProjectsSectionComponent } from './my-projects-section/my-projects-section.component';
 import { ContactMeSectionComponent } from './contact-me-section/contact-me-section.component';
 import { FooterComponent } from './footer/footer.component';
+import { TranslateModule,TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,8 @@ import { FooterComponent } from './footer/footer.component';
     MySkillsSectionComponent,
     MyProjectsSectionComponent,
     ContactMeSectionComponent,
-    FooterComponent
+    FooterComponent,
+    TranslateModule        
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']

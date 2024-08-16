@@ -1,6 +1,6 @@
 <div id="my-skills-section" class="my-skills-section">
     <div class="my-skills-title">
-        My Skills
+        {{'my_skills' | translate }}
     </div>
     <div class="my-skills">
         <div class="my-skills-undercontainer angular-div">
@@ -36,5 +36,12 @@
         <div class="my-skills-undercontainer challenge-div">
             <img src="./../../assets/img/challenge-me-icon.svg" alt="">
         </div>
-    </div>   
+    </div>
+    <div class="my-skills-text-with-img" style="display: none;">
+        <img src="./../../assets/img/arrow_learn_new_tech.svg" alt="">
+        <span>I am always happy to learn new technonogies,just tell me what you need.</span>
+        <div class="my-skills-section-talk-button">
+            <button (click)="navigateToContactMe()">{{'lets_talk' | translate }}</button>
+        </div>
+    </div>
 </div>
