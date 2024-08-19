@@ -17,7 +17,7 @@ p {
         a.adress-phone-email {
             color: #02F4BF !important;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.125s ease;
 
             &:hover {
                 color: #E15544;
@@ -29,7 +29,7 @@ p {
         font-size: 30px;
         font-weight: 500;
         color: #E15544;
-        transition: transform 0.3s ease, color 0.3s ease, padding 0.3s ease, border 0.3s ease;
+        transition: transform 0.125s ease, color 0.125s ease, padding 0.125s ease, border 0.125s ease;
         text-decoration: none;
 
         &:hover {

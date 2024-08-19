@@ -79,7 +79,7 @@
 
 #relocate-image {
     transform: rotate(0deg);
-    transition: transform 300ms ease-in-out;
+    transition: transform 125ms ease-in-out;
 }
 
 .relocate-div:hover {
@@ -161,7 +161,7 @@
         cursor: pointer;
 
         &:hover {
-            transition: color 0.3s ease-in-out;
+            transition: color 0.125s ease-in-out;
             color: #E15544;
         }
     }
@@ -179,7 +179,7 @@
     height: 41px;
     background-size: cover;
     background-repeat: no-repeat;
-    transition: background-image 300ms ease-in-out, width 300ms ease-in-out, height 300ms ease-in-out;
+    transition: background-image 125ms ease-in-out, width 125ms ease-in-out, height 125ms ease-in-out;
 }
 
 .located-div:hover {
@@ -214,7 +214,7 @@
     width: 34px;
     height: 58px;
     padding-right: 32px;
-    transition: transform 500ms ease-in-out;
+    transition: transform 125ms ease-in-out;
     transform: scale(1.05);
 }
 

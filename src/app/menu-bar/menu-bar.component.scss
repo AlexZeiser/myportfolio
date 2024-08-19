@@ -9,7 +9,7 @@
     top: 0;
     height: 100px;
     z-index: 1000;
-    transition: z-index 0.3s ease;
+    transition: z-index 0.125s ease;
 }
 
 .menu-bar.menu-open {
@@ -18,7 +18,7 @@
 
 .logo {
     z-index: 1;
-    transition: z-index 0.3s ease;
+    transition: z-index 0.125s ease;
 }
 
 .logo.menu-open {
