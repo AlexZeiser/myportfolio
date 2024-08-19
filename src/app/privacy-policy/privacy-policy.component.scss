@@ -1,0 +1,126 @@
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 500;
+    line-height: 64.8px;
+    color: #E15544;
+}
+
+p,
+li {
+    font-size: 20px;
+    font-weight: 500;
+    color: #02F4BF;
+    padding-bottom: 16px;
+
+    a {
+        font-size: 30px;
+        font-weight: 500;
+        color: #E15544;
+        transition: transform 0.3s ease, color 0.3s ease, padding 0.3s ease, border 0.3s ease;
+        text-decoration: none;
+
+        &:hover {
+            transform: scale(1.1);
+            color: #02F4BF;
+            padding: 8px;
+            border-radius: 10px;
+            border: solid 1px #E15544;
+        }
+    }
+
+    span {
+        color: #02F4BF;
+    }
+
+    strong {
+        color: #E15544;
+    }
+}
+
+.contactBorder {
+    padding: 8px;
+    border-radius: 10px;
+    border: solid 1px #E15544;
+}
+
+.privacy-policy-content {
+    margin-left: 333px;
+    margin-right: 333px;
+    min-height: 100vh;
+    margin-top: 100px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* mobile */
+@media screen and (max-width: 1860px) {
+    .privacy-policy-content {
+        margin-left: 233px;
+        margin-right: 233px;
+    }
+}
+
+@media screen and (max-width: 1760px) {
+    .privacy-policy-content {
+        margin-left: 133px;
+        margin-right: 133px;
+    }
+}
+
+@media screen and (max-width: 1560px) {
+    .privacy-policy-content {
+        margin-left: 33px;
+        margin-right: 33px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    h4 {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 12px;
+        text-align: center;
+
+        a {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 12px;
+            text-align: center;
+        }
+    }
+
+    li {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .privacy-policy-content {
+        margin-top: 0px;
+    }
+}

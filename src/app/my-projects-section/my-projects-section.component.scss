@@ -6,6 +6,11 @@
     margin-top: 100px;
 }
 
+.my-projects-section.my-projects-section-elpololoco {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 #my-projects-section {
     font-size: 54px;
     font-weight: 500;
@@ -23,8 +28,8 @@
 
 .my-projects-section-image-div {
     img {
-        width: 588px;
-        height: 381px;
+        width: 500px;
+        height: 500px;
     }
 }
 
@@ -64,7 +69,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
+    gap: 20px;   
+    width: 50%;
 }
 
 .my-projects-section-buttons {
@@ -146,8 +152,16 @@
     #my-projects-section-div {
         margin-top: 50px;
     }
+    .my-projects-section-infos-div {       
+        width: auto;
+    }
 
     .my-projects-section {
+        align-items: center;
+        flex-direction: column-reverse;
+        margin-top: 50px;
+    }
+    .my-projects-section.my-projects-section-elpololoco {
         align-items: center;
         flex-direction: column-reverse;
         margin-top: 50px;

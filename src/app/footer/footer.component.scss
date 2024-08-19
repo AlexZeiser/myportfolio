@@ -68,7 +68,7 @@
     gap: 10px;
     padding-left: 80px;
 
-    button {
+    a {
         border: none;
         color: #E15544;
         font-size: 14px;
@@ -195,6 +195,7 @@
     .footer-menusystem-buttons {
         padding-left: 0px;
         flex-direction: column;
+        text-align: center;
     }
 
     .footer-middle {
@@ -220,5 +221,5 @@
 
     .social-links-mobile {        
         padding-bottom: 50px;
-    }
+    }    
 }

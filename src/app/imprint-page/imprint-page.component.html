@@ -1,0 +1,15 @@
+<div class="imprint-content">
+    <h1>{{ 'impressumTitle' | translate }}</h1>
+
+    <p [innerHTML]="('address' | translate)"></p>
+
+    <h2>{{ 'contactTitle' | translate }}</h2>
+    <p>
+        <span [innerHTML]="('phone' | translate)"></span><br />
+        <span [innerHTML]="('email' | translate)"></span>
+    </p>
+        
+    <p>{{'source-text' | translate}}: 
+        <a [href]="('source' | translate)" target="_blank" rel="noopener noreferrer">{{ 'source' | translate }}</a>
+    </p>
+</div>

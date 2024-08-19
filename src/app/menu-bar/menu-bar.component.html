@@ -32,8 +32,8 @@
         <img id="burger-menu-close" src="./../../assets/img/burger-menu-icon-close.svg" alt="Burger Menu Icon Close">        
     </div>
 
-</div> --><!-- 
-<div class="menu-bar">
+</div> -->
+<!-- <div class="menu-bar">
     <div class="menu">
         <div class="logo">
             <span id="menu-bar-logo-name" [class.active]="activeButton === 'menu-bar-logo-name'"
@@ -98,7 +98,7 @@
             <span id="menu-bar-logo-name" [class.active]="activeButton === 'menu-bar-logo-name'"
                 (click)="navigateToHeader()">&lt; AZ &gt;</span>
         </div>
-        <div class="menusystem">
+        <div *ngIf="isVisible" class="menusystem">
             <button id="why-me-button" [class.active]="activeButton === 'why-me-button'"
                 (click)="navigateToWhyMe()">{{'header_AboutMe' | translate }}</button>
             <button id="skills-button" [class.active]="activeButton === 'skills-button'"
@@ -128,7 +128,7 @@
 
 <div class="burger-menu-div-open" *ngIf="isMenuOpen">
     <div class="overlay-content">
-        <div class="menusystem">
+        <div class="menusystem menusystem-other-side" *ngIf="isVisible">
             <button class="ovelay-menu-fs" id="why-me-button" [class.active]="activeButton === 'why-me-button'"
                 (click)="navigateToWhyMe()">{{'header_AboutMe' | translate }}</button>
             <button class="ovelay-menu-fs" id="skills-button" [class.active]="activeButton === 'skills-button'"

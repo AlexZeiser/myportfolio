@@ -17,7 +17,7 @@ export class MySkillsSectionComponent {
   }
 
   navigateToContactMe(): void {
-    this.router.navigate(['/contact-me-section'], { fragment: 'contact-me-container' }).then(() => {
+    this.router.navigate([], { fragment: 'contact-me-container' }).then(() => {
       const element = document.getElementById('contact-me-container');
       if (element) {
         const headerOffset = 100;

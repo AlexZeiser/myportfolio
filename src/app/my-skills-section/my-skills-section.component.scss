@@ -51,6 +51,120 @@
     }
 }
 
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.05);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    75% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.my-skills img {
+    cursor: pointer;
+}
+
+.angular-div:hover {
+    animation: shake 0.5s ease-in-out;
+}
+
+.typescript-div:hover {
+    animation: rotate 0.5s ease-in-out;
+}
+
+.javascript-div:hover {
+    animation: scale 0.5s ease-in-out;
+}
+
+.html-div:hover {
+    animation: shake 0.5s ease-in-out;
+}
+
+.css-div:hover {
+    animation: rotate 0.5s ease-in-out;
+}
+
+.rest-api-div:hover {
+    animation: scale 0.5s ease-in-out;
+}
+
+.firebase-div:hover {
+    animation: shake 0.5s ease-in-out;
+}
+
+.git-div:hover {
+    animation: rotate 0.5s ease-in-out;
+}
+
+.scrum-div:hover {
+    animation: scale 0.5s ease-in-out;
+}
+
+.material-div:hover {
+    animation: shake 0.5s ease-in-out;
+}
+
+.challenge-div:hover {
+    animation: rotate 0.5s ease-in-out;
+}
+
 /* mobile */
 @media screen and (max-width: 1860px) {
     .my-skills-section {
@@ -106,7 +220,7 @@
 
 @media screen and (max-width: 500px) {
 
-    .my-skills-section {        
+    .my-skills-section {
         height: 50vh;
     }
 

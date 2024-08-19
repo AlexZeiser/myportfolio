@@ -1,130 +1,9 @@
-/* import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
-
-
-@Component({
-  selector: 'app-menu-bar',
-  standalone: true,
-  imports: [TranslateModule],
-  templateUrl: './menu-bar.component.html',
-  styleUrls: ['./menu-bar.component.scss']
-})
-export class MenuBarComponent {
-  activeLanguage: string = localStorage.getItem('language') || 'en';
-
-  constructor(private router: Router) {
-  }
-  private translateService = inject(TranslateService);
-
-  ngOnInit(): void {
-    const defaultLang = localStorage.getItem('language') || 'en';
-    this.translateService.setDefaultLang(defaultLang);
-    this.translateService.use(defaultLang);
-  }
-
-  changeLanguage(language: string) {
-    const currentLanguage = this.translateService.currentLang || 'en';
-
-    if (currentLanguage !== language) {
-      this.translateService.use(language);
-      localStorage.setItem('language', language);
-      this.activeLanguage = language;
-    }
-  }
-
-
-  activeButton: string = '';
-
-  setActiveButton(buttonId: string) {
-    this.activeButton = buttonId;
-  }
-
-  navigateToHeader(): void {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }
-
-  navigateToWhyMe(): void {
-    this.setActiveButton('why-me-button');
-
-    this.router.navigate(['/why-me-section'], { fragment: 'why-me-section' }).then(() => {
-      const element = document.getElementById('why-me-section');
-      if (element) {
-        const headerOffset = 100;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  }
-
-  navigateToSkills(): void {
-    this.setActiveButton('skills-button');
-
-    this.router.navigate(['/my-skills-section'], { fragment: 'my-skills-section' }).then(() => {
-      const element = document.getElementById('my-skills-section');
-      if (element) {
-        const headerOffset = 100;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  }
-
-  navigateToProjects(): void {
-    this.setActiveButton('projects-button');
-
-    this.router.navigate(['/my-projects-section'], { fragment: 'my-projects-section' }).then(() => {
-      const element = document.getElementById('my-projects-section');
-      if (element) {
-        const headerOffset = 100;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  }
-
-  navigateToContactMe(): void {
-    this.setActiveButton('contact-button');
-
-    this.router.navigate(['/contact-me-section'], { fragment: 'contact-me-container' }).then(() => {
-      const element = document.getElementById('contact-me-container');
-      if (element) {
-        const headerOffset = 100;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  }
-}
- */
 
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, inject, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-menu-bar',
@@ -133,12 +12,13 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   templateUrl: './menu-bar.component.html',
   styleUrls: ['./menu-bar.component.scss']
 })
-export class MenuBarComponent {
+export class MenuBarComponent implements OnInit {
   activeLanguage: string = localStorage.getItem('language') || 'en';
   activeButton: string = '';
   isMenuOpen: boolean = false;
+  isVisible: boolean = true;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   private translateService = inject(TranslateService);
 
@@ -146,6 +26,15 @@ export class MenuBarComponent {
     const defaultLang = localStorage.getItem('language') || 'en';
     this.translateService.setDefaultLang(defaultLang);
     this.translateService.use(defaultLang);
+
+    // Überwache Router-Änderungen
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {      
+      const currentUrl = this.router.url;
+      this.isVisible = !(currentUrl === '/imprint' || currentUrl === '/privacy-policy');
+      window.scrollTo(0, 0);
+    });
   }
 
   changeLanguage(language: string) {
@@ -176,7 +65,7 @@ export class MenuBarComponent {
     this.setActiveButton('why-me-button');
     this.closeMenuIfOpen();
 
-    this.router.navigate(['/why-me-section'], { fragment: 'why-me-section' }).then(() => {
+    this.router.navigate([], { fragment: 'why-me-section' }).then(() => {
       this.scrollToSection('why-me-section');
     });
   }
@@ -185,7 +74,7 @@ export class MenuBarComponent {
     this.setActiveButton('skills-button');
     this.closeMenuIfOpen();
 
-    this.router.navigate(['/my-skills-section'], { fragment: 'my-skills-section' }).then(() => {
+    this.router.navigate([], { fragment: 'my-skills-section' }).then(() => {
       this.scrollToSection('my-skills-section');
     });
   }
@@ -194,7 +83,7 @@ export class MenuBarComponent {
     this.setActiveButton('projects-button');
     this.closeMenuIfOpen();
 
-    this.router.navigate(['/my-projects-section'], { fragment: 'my-projects-section' }).then(() => {
+    this.router.navigate([], { fragment: 'my-projects-section' }).then(() => {
       this.scrollToSection('my-projects-section');
     });
   }
@@ -203,7 +92,7 @@ export class MenuBarComponent {
     this.setActiveButton('contact-button');
     this.closeMenuIfOpen();
 
-    this.router.navigate(['/contact-me-section'], { fragment: 'contact-me-container' }).then(() => {
+    this.router.navigate([], { fragment: 'contact-me-container' }).then(() => {
       this.scrollToSection('contact-me-container');
     });
   }

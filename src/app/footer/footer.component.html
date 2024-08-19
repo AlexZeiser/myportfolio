@@ -1,32 +1,38 @@
 <div id="footer" class="footer">
     <div class="social-links-mobile">
-        <a href="https://github.com/AlexZeiser" id="img-github-mobile" target="_blank">
-        </a>
-        <a href="mailto:alex.zeiser.rest@gmail.com" id="img-email-mobile">
-        </a>
+        <a href="https://github.com/AlexZeiser" id="img-github-mobile" target="_blank"></a>
+        <a href="mailto:alex.zeiser.rest@gmail.com" id="img-email-mobile"></a>
     </div>
 
     <div class="footer-left">
         <span (click)="navigateToHeader()">&lt; AZ &gt;</span>
     </div>
+
     <div class="footer-middle">
         <div class="footer-content">
             <span id="footer-content-job">{{'frontend_developer' | translate}}</span>
             <span dir="footer-content-job-span">Alex Zeiser 2024</span>
             <div class="social-links">
-                <a href="https://github.com/AlexZeiser" id="img-github" target="_blank">
-                </a>
-                <a href="mailto:alex.zeiser.rest@gmail.com" id="img-email">
-                </a>
+                <a href="https://github.com/AlexZeiser" id="img-github" target="_blank"></a>
+                <a href="mailto:alex.zeiser.rest@gmail.com" id="img-email"></a>
             </div>
         </div>
     </div>
+
     <div class="footer-bottom">
         <div class="footer-menusystem-buttons">
-            <button id="legal-notice-btn" [class.active]="activeFooterButton === 'legal-notice-btn'"
-                (click)="setActiveFooterButton('legal-notice-btn')">{{'legal_notice' | translate}}</button>
-            <button id="impressum-btn" [class.active]="activeFooterButton === 'impressum-btn'"
-                (click)="setActiveFooterButton('impressum-btn')">{{'impressum' | translate}}</button>
+          <a routerLink="/privacy-policy" id="legal-notice-link" *ngIf="isVisible" 
+             [class.active]="activeFooterButton === 'legal-notice-btn'"
+             (click)="setActiveFooterButton('legal-notice-btn')">
+            {{ 'legal_notice' | translate }}
+          </a>
+          <a routerLink="/imprint" id="impressum-link" *ngIf="isVisible" 
+             [class.active]="activeFooterButton === 'impressum-btn'"
+             (click)="setActiveFooterButton('impressum-btn')">
+            {{ 'impressum' | translate }}
+          </a>
         </div>
-    </div>
+      </div>
+      
+
 </div>

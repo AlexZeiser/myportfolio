@@ -37,15 +37,24 @@
         <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
             <div class="form-name-email-message">
                 <div class="form-name-email">
-                    <input [(ngModel)]="contactData.name" type="text" id="name" name="name"
-                        placeholder="{{ 'yourName' | translate }}" required>
-                    <input [(ngModel)]="contactData.email" type="email" id="email" name="email"
-                        placeholder="{{ 'yourEmail' | translate }}" required
-                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                    <input [(ngModel)]="contactData.name" type="text" id="name" name="name" [placeholder]="contactForm.controls['name']?.touched && contactForm.controls['name']?.invalid 
+                                        ? ('yourNameRequired' | translate) 
+                                        : ('yourName' | translate)"
+                        [ngClass]="{'error': contactForm.controls['name']?.touched && contactForm.controls['name']?.invalid}"
+                        required>
+
+                    <input [(ngModel)]="contactData.email" type="email" id="email" name="email" [placeholder]="contactForm.controls['email']?.touched && contactForm.controls['email']?.invalid
+                                        ? ('yourEmailRequired' | translate) 
+                                        : ('yourEmail' | translate)"
+                        [ngClass]="{'error': contactForm.controls['email']?.touched && contactForm.controls['email']?.invalid}"
+                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
                 </div>
                 <div class="form-message">
-                    <textarea [(ngModel)]="contactData.message" id="message" name="message"
-                        placeholder="{{ 'yourMessage' | translate }}" minlength="4"></textarea>
+                    <textarea [(ngModel)]="contactData.message" id="message" name="message" [placeholder]="contactForm.controls['message']?.touched && contactForm.controls['message']?.invalid
+                                        ? ('yourMessageRequired' | translate) 
+                                        : ('yourMessage' | translate)"
+                        [ngClass]="{'error': contactForm.controls['message']?.touched && contactForm.controls['message']?.invalid}"
+                        minlength="10" required></textarea>
                 </div>
             </div>
             <div class="form-checkbox-button">
@@ -54,37 +63,40 @@
                         [(ngModel)]="contactData.privacyPolicy" required>
                     <label for="privacyPolicy">
                         <div id="i-read">{{ 'privacy_policy_read' | translate }}
-                            <span id="privacy">{{ 'privacy_policy' | translate }}
-                            </span>{{ 'privacy_policy_agree' | translate }}
+                            <span id="privacy">{{ 'privacy_policy' | translate }}</span>{{ 'privacy_policy_agree' |
+                            translate }}
                         </div>
                     </label>
+                    <div *ngIf="contactForm.controls['privacyPolicy']?.dirty && !contactData.privacyPolicy"
+                        class="error-message">
+                        {{ 'privacyPolicyRequired' | translate }}
+                    </div>
+
                 </div>
                 <div class="form-button">
                     <button [disabled]="!isFormValid(contactForm)" type="submit">{{ 'send' | translate }}</button>
                 </div>
+            </div>
 
-                <div id="form-checkbox-button-image" class="form-checkbox-button-image" style="display: none;">
-                    <div id="form-checkbox-button-image-div" (click)="navigateToHeader()">
 
-                    </div>
+            <div id="form-checkbox-button-image" class="form-checkbox-button-image" style="display: none;">
+                <div id="form-checkbox-button-image-div" (click)="navigateToHeader()"></div>
+            </div>
+            <div class="headline-info-mail-phone-mobile" style="display: none;">
+                <div class="email-div-mobile">
+                    <div class="phone-mail-mobile" id="mail-icon-mobile"></div>
+                    <span class="headline-infos-mailPhone-mobile" id="headline-info-mail-mobile">
+                        E-mail:&nbsp; <a href="mailto:alex.zeiser.rest@gmail.com">alex.zeiser.rest(at)gmail.com</a>
+                    </span>
                 </div>
-                <div class="headline-info-mail-phone-mobile" style="display: none;">
-                    <div class="email-div-mobile">
-                        <div class="phone-mail-mobile" id="mail-icon-mobile"></div>
-                        <span class="headline-infos-mailPhone-mobile" id="headline-info-mail-mobile">
-                            E-mail:&nbsp; <a href="mailto:alex.zeiser.rest@gmail.com">alex.zeiser.rest(at)gmail.com</a>
-                        </span>
-                    </div>
-                    <br>
-                    <div class="phone-div-mobile">
-                        <div class="phone-mail-mobile" id="phone-icon-mobile"></div>
-                        <span class="headline-infos-mailPhone-mobile" id="headline-info-phone-mobile">
-                            Tel:&nbsp; <a href="tel:+4917622695088">0176 22695088</a>
-                        </span>
-                    </div>
+                <br>
+                <div class="phone-div-mobile">
+                    <div class="phone-mail-mobile" id="phone-icon-mobile"></div>
+                    <span class="headline-infos-mailPhone-mobile" id="headline-info-phone-mobile">
+                        Tel:&nbsp; <a href="tel:+4917622695088">0176 22695088</a>
+                    </span>
                 </div>
             </div>
         </form>
-
     </div>
 </div>
