@@ -1,0 +1,28 @@
+@media screen and (max-width: 1400px) {
+    .menu-bar {
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+
+    .burger-menu {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .menusystem,
+    .change-language-div {
+        display: none;
+    }
+
+    .burger-menu-div-open {
+        display: flex;
+    }
+
+    #burger-menu-close {
+        display: flex !important;
+        z-index: 1002;
+    }
+}

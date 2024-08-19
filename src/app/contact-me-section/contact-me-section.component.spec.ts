@@ -10,7 +10,7 @@ describe('ContactMeSectionComponent', () => {
     await TestBed.configureTestingModule({
       imports: [ContactMeSectionComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ContactMeSectionComponent);
     component = fixture.componentInstance;

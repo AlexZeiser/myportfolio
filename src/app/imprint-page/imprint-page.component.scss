@@ -11,16 +11,16 @@ p {
     color: #02F4BF;
     padding-bottom: 16px;
 
-    span{
-        color: #02F4BF!important; 
-       
+    span {
+        color: #02F4BF !important;
+
         a.adress-phone-email {
-            color: #02F4BF!important;        
-            text-decoration: none;        
-            transition: color 0.3s ease;        
-    
+            color: #02F4BF !important;
+            text-decoration: none;
+            transition: color 0.3s ease;
+
             &:hover {
-                color: #E15544;           
+                color: #E15544;
             }
         }
     }
@@ -53,28 +53,4 @@ p {
     height: 62vh;
 }
 
-
-@media screen and (max-width: 660px) {
-    p {
-        font-size: 16px;
-        text-align: center;
-
-        a {
-            font-size: 16px;
-        }
-    }
-
-    h1,
-    h2 {
-        font-size: 24px;
-        text-align: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .imprint-content {
-        margin-left: 20px;
-        margin-right: 20px;
-        margin-top: 50px;
-    }
-}
+@import './imprint-page.component.media.scss';

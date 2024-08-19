@@ -21,5 +21,5 @@ export const routes: Routes = [
     { path: 'my-projects-section', component: MyProjectsSectionComponent },
     { path: 'contact-me-section', component: ContactMeSectionComponent },
     { path: 'footer', component: FooterComponent },
-   
+
 ];

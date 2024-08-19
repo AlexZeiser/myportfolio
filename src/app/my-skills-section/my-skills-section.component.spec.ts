@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MySkillsSectionComponent } from './my-skills-section.component';
 
 describe('MySkillsSectionComponent', () => {
@@ -10,7 +9,7 @@ describe('MySkillsSectionComponent', () => {
     await TestBed.configureTestingModule({
       imports: [MySkillsSectionComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(MySkillsSectionComponent);
     component = fixture.componentInstance;

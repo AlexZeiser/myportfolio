@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [TranslateModule, RouterLink, RouterLinkActive,MenuBarComponent, ImprintPageComponent, CommonModule],
+  imports: [TranslateModule, RouterLink, RouterLinkActive, MenuBarComponent, ImprintPageComponent, CommonModule],
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
@@ -24,7 +24,7 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {      
+    ).subscribe(() => {
       const currentUrl = this.router.url;
       this.isVisible = !(currentUrl === '/imprint' || currentUrl === '/privacy-policy');
       window.scrollTo(0, 0);

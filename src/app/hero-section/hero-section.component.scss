@@ -11,7 +11,7 @@
 #test {
     display: flex;
     justify-content: space-between;
-    flex-direction: column;    
+    flex-direction: column;
 }
 
 .hero-section-infos {
@@ -90,90 +90,4 @@
     height: 60.85px;
 }
 
-
-/* mobile */
-@media screen and (max-width: 1860px) {
-    .hero-section {
-        margin-left: 233px;
-        margin-right: 233px;
-    }
-}
-
-@media screen and (max-width: 1760px) {
-    .hero-section {
-        margin-left: 133px;
-        margin-right: 133px;
-    }
-}
-
-@media screen and (max-width: 1560px) {
-    .hero-section {
-        margin-left: 33px;
-        margin-right: 33px;
-    }
-}
-
-@media screen and (max-width: 1400px) {
-    .hero-section {
-        justify-content: center;
-        flex-direction: column-reverse;
-        margin-top: 0px;
-    }
-
-    .hero-section-contact-arrow {
-        display: none;
-    }
-
-    .hero-section-name-job {
-        align-items: center;
-    }
-
-    .hero-section-arrow {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .hero-section-job {
-        font-size: 30px;
-    }
-
-    .hero-section-name {
-        font-size: 50px;
-    }
-    .hero-section-image img{
-        width: 439px;
-        height: auto;
-    }
-}
-
-@media screen and (max-width: 560px) {    
-    .hero-section-job {
-        font-size: 20px;
-    }
-
-    .hero-section-name {
-        font-size: 40px;
-    }
-
-    .hero-section-image img{
-        width: 339px;
-        height: auto;
-    }
-}
-@media screen and (max-width: 500px) {
-    .hero-section-name{
-        font-size: 30px;
-        line-height: 30px;
-    }
-}
-
-@media screen and (max-width: 400px) {    
-    .hero-section-image img{
-        width: 239px;
-        height: auto;
-    }
-    .hero-section-name{
-        line-height: 30px;
-    }
-}
+@import './hero-section.component.media.scss';

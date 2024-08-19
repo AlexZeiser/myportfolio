@@ -21,18 +21,16 @@
 
     <div class="footer-bottom">
         <div class="footer-menusystem-buttons">
-          <a routerLink="/privacy-policy" id="legal-notice-link" *ngIf="isVisible" 
-             [class.active]="activeFooterButton === 'legal-notice-btn'"
-             (click)="setActiveFooterButton('legal-notice-btn')">
-            {{ 'legal_notice' | translate }}
-          </a>
-          <a routerLink="/imprint" id="impressum-link" *ngIf="isVisible" 
-             [class.active]="activeFooterButton === 'impressum-btn'"
-             (click)="setActiveFooterButton('impressum-btn')">
-            {{ 'impressum' | translate }}
-          </a>
+            <a routerLink="/privacy-policy" id="legal-notice-link" *ngIf="isVisible"
+                [class.active]="activeFooterButton === 'legal-notice-btn'"
+                (click)="setActiveFooterButton('legal-notice-btn')">
+                {{ 'legal_notice' | translate }}
+            </a>
+            <a routerLink="/imprint" id="impressum-link" *ngIf="isVisible"
+                [class.active]="activeFooterButton === 'impressum-btn'"
+                (click)="setActiveFooterButton('impressum-btn')">
+                {{ 'impressum' | translate }}
+            </a>
         </div>
-      </div>
-      
-
+    </div>
 </div>
