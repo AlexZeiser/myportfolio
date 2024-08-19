@@ -8,14 +8,25 @@ import { ContactMeSectionComponent } from '../contact-me-section/contact-me-sect
 import { FooterComponent } from '../footer/footer.component';
 import { ImprintPageComponent } from "../imprint-page/imprint-page.component";
 
-
+/**
+ * Main component of the application.
+ * It serves as the container for all the major sections of the application, 
+ * including the menu bar, hero section, various content sections, and the footer.
+ */
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [MenuBarComponent, HeroSectionComponent, WhyMeSectionComponent, MySkillsSectionComponent, MyProjectsSectionComponent, ContactMeSectionComponent, FooterComponent, ImprintPageComponent],
+  imports: [
+    MenuBarComponent,
+    HeroSectionComponent,
+    WhyMeSectionComponent,
+    MySkillsSectionComponent,
+    MyProjectsSectionComponent,
+    ContactMeSectionComponent,
+    FooterComponent,
+    ImprintPageComponent
+  ],
   templateUrl: './main.component.html',
-  styleUrl: './main.component.scss'
+  styleUrls: ['./main.component.scss']
 })
-export class MainComponent {
-
-}
+export class MainComponent { }

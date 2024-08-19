@@ -3,6 +3,10 @@ import { MenuBarComponent } from "../menu-bar/menu-bar.component";
 import { FooterComponent } from "../footer/footer.component";
 import { TranslateModule } from '@ngx-translate/core';
 
+/**
+ * Component representing the imprint page of the application.
+ * Displays the imprint information along with a menu bar and footer.
+ */
 @Component({
   selector: 'app-imprint-page',
   standalone: true,

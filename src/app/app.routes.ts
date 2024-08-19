@@ -10,16 +10,80 @@ import { ContactMeSectionComponent } from './contact-me-section/contact-me-secti
 import { FooterComponent } from './footer/footer.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
+/**
+ * Array of route configurations for the Angular application.
+ * Defines the paths and the components associated with each path.
+ *
+ * @type {Routes}
+ */
 export const routes: Routes = [
+    /**
+     * Route for the root path. Displays the `MainComponent`.
+     * 
+     * @type {Route}
+     */
     { path: '', component: MainComponent },
-    { path: 'imprint', component: ImprintPageComponent },
-    { path: 'privacy-policy', component: PrivacyPolicyComponent },
-    { path: 'menu-bar', component: MenuBarComponent },
-    { path: 'hero-section', component: HeroSectionComponent },
-    { path: 'why-me-section', component: WhyMeSectionComponent },
-    { path: 'my-skills-section', component: MySkillsSectionComponent },
-    { path: 'my-projects-section', component: MyProjectsSectionComponent },
-    { path: 'contact-me-section', component: ContactMeSectionComponent },
-    { path: 'footer', component: FooterComponent },
 
+    /**
+     * Route for the '/imprint' path. Displays the `ImprintPageComponent`.
+     * 
+     * @type {Route}
+     */
+    { path: 'imprint', component: ImprintPageComponent },
+
+    /**
+     * Route for the '/privacy-policy' path. Displays the `PrivacyPolicyComponent`.
+     * 
+     * @type {Route}
+     */
+    { path: 'privacy-policy', component: PrivacyPolicyComponent },
+
+    /**
+     * Route for the '/menu-bar' path. Displays the `MenuBarComponent`.
+     * 
+     * @type {Route}
+     */
+    { path: 'menu-bar', component: MenuBarComponent },
+
+    /**
+     * Route for the '/hero-section' path. Displays the `HeroSectionComponent`.
+     * 
+     * @type {Route}
+     */
+    { path: 'hero-section', component: HeroSectionComponent },
+
+    /**
+     * Route for the '/why-me-section' path. Displays the `WhyMeSectionComponent`.
+     * 
+     * @type {Route}
+     */
+    { path: 'why-me-section', component: WhyMeSectionComponent },
+
+    /**
+     * Route for the '/my-skills-section' path. Displays the `MySkillsSectionComponent`.
+     * 
+     * @type {Route}
+     */
+    { path: 'my-skills-section', component: MySkillsSectionComponent },
+
+    /**
+     * Route for the '/my-projects-section' path. Displays the `MyProjectsSectionComponent`.
+     * 
+     * @type {Route}
+     */
+    { path: 'my-projects-section', component: MyProjectsSectionComponent },
+
+    /**
+     * Route for the '/contact-me-section' path. Displays the `ContactMeSectionComponent`.
+     * 
+     * @type {Route}
+     */
+    { path: 'contact-me-section', component: ContactMeSectionComponent },
+
+    /**
+     * Route for the '/footer' path. Displays the `FooterComponent`.
+     * 
+     * @type {Route}
+     */
+    { path: 'footer', component: FooterComponent }
 ];
