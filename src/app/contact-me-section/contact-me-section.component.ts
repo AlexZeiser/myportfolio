@@ -42,7 +42,7 @@ export class ContactMeSectionComponent {
    * Flag to indicate whether the mail test mode is active.
    * @type {boolean}
    */
-  mailTest = true;
+  mailTest = false;
 
   /**
    * Configuration for the POST request to send the contact form data.

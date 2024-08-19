@@ -97,7 +97,7 @@
     .form-checkbox-button-image {
         display: flex !important;
         align-self: end;
-    }
+    }    
 
     .email-div,
     .phone-div {
@@ -124,10 +124,14 @@
             font-size: 13px;
         }
     }
+    #form-checkbox-button-image-div{
+        width: 14px;
+        height: 40px;
+    }
 }
 
 @media screen and (max-width: 400px) {
     form {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
