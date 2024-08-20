@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
@@ -59,6 +59,10 @@ export class ContactMeSectionComponent {
     },
   };
 
+  @ViewChild('messageInput', { static: true }) messageInput!: ElementRef<HTMLTextAreaElement>;
+  @ViewChild('errorImg', { static: true }) errorImg!: ElementRef<HTMLImageElement>;
+  @ViewChild('successImg', { static: true }) successImg!: ElementRef<HTMLImageElement>;
+
   /**
    * Checks if the contact form is valid.
    * @param {NgForm} form - The contact form to validate.
@@ -103,4 +107,24 @@ export class ContactMeSectionComponent {
       behavior: 'smooth'
     });
   }
+
+  /**
+   * Handles the input event for the message textarea.
+   * Toggles the display of the error and success images based on the input length.
+   */
+  onMessageInput() {
+    const messageLength = this.messageInput.nativeElement.value.trim().length;
+
+    if (messageLength >= 10) {
+        setTimeout(() => {
+            this.successImg.nativeElement.style.display = 'flex';
+            this.errorImg.nativeElement.style.display = 'none';
+        }, 0);
+    } else {
+        this.successImg.nativeElement.style.display = 'none';
+        this.errorImg.nativeElement.style.display = 'block';
+    }
 }
+
+}
+

@@ -66,9 +66,33 @@ form {
     width: 100%;
     display: flex;
     flex: 1;
+    position: relative;
 
     span {
         color: #E15544;
+    }
+
+    textarea {
+        flex-grow: 1; 
+        padding-right: 40px; 
+    }
+
+    .error-img, .success-img {
+        position: absolute;
+        right: 10px; 
+        bottom: 140px;       
+    }
+
+    .success-img {
+        display: none;
+    }
+
+    .success-img.visible {
+        display: flex;
+    }
+
+    textarea.error + .error-img {
+        display: block;
     }
 }
 
@@ -375,6 +399,13 @@ textarea.error {
 input.error::placeholder,
 textarea.error::placeholder {
     color: red;
+}
+
+.error-img{
+
+}
+.success-img{
+
 }
 
 @import './contact-me-section.component.media.scss';

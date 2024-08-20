@@ -50,11 +50,19 @@
                         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
                 </div>
                 <div class="form-message">
-                    <textarea [(ngModel)]="contactData.message" id="message" name="message" [placeholder]="contactForm.controls['message']?.touched && contactForm.controls['message']?.invalid
-                                        ? ('yourMessageRequired' | translate) 
-                                        : ('yourMessage' | translate)"
+                    <textarea [(ngModel)]="contactData.message" id="message" name="message" (input)="onMessageInput()"
+                        [placeholder]="contactForm.controls['message']?.touched && contactForm.controls['message']?.invalid
+                                                                ? ('yourMessageRequired' | translate) 
+                                                                : ('yourMessage' | translate)"
                         [ngClass]="{'error': contactForm.controls['message']?.touched && contactForm.controls['message']?.invalid}"
-                        minlength="10" required></textarea>
+                        minlength="10" required #messageInput>
+                    </textarea>
+
+                    <img *ngIf="contactForm.controls['message']?.touched && contactForm.controls['message']?.invalid"
+                        src="./../../assets/img/icon_required.svg" class="error-img" alt="Error Image" #errorImg>
+                    <img src="./../../assets/img/icon_done.svg" class="success-img"
+                        [ngClass]="{'visible': contactData.message.trim().length >= 10}" alt="Success Image"
+                        #successImg>
                 </div>
             </div>
             <div class="form-checkbox-button">
