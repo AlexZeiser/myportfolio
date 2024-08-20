@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, ElementRef, inject, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, ViewChild, AfterViewInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
@@ -15,7 +15,7 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './contact-me-section.component.html',
   styleUrls: ['./contact-me-section.component.scss']
 })
-export class ContactMeSectionComponent {
+export class ContactMeSectionComponent implements AfterViewInit  {
   /**
    * Constructor to inject the necessary dependencies.
    * @param {Router} router - The Angular Router used for navigation.
@@ -39,17 +39,18 @@ export class ContactMeSectionComponent {
   }
 
   /**
-   * Flag to indicate whether the mail test mode is active.
+   * Flag to indicate whether the mail test and showNotification mode is active.
    * @type {boolean}
    */
   mailTest = false;
+  showNotification = false;
 
   /**
    * Configuration for the POST request to send the contact form data.
    * @type {{ endPoint: string, body: (payload: any) => string, options: { headers: { 'Content-Type': string, responseType: string } } }}
    */
   post = {
-    endPoint: 'http://alex-zeiser-developer.de/sendMail.php',
+    endPoint: 'https://alex-zeiser-developer.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -71,7 +72,7 @@ export class ContactMeSectionComponent {
   isFormValid(form: NgForm): boolean {
     return form.form.valid &&
       this.contactData.privacyPolicy &&
-      this.contactData.message.trim().length >= 10;
+      (this.contactData.message || '').trim().length >= 10;
   }
 
   /**
@@ -85,6 +86,11 @@ export class ContactMeSectionComponent {
         .subscribe({
           next: (response) => {
             ngForm.resetForm();
+            this.showNotification = true;
+            setTimeout(() => {
+              this.showNotification = false;
+            }, 2000);
+
             console.info('E-Mail erfolgreich gesendet');
           },
           error: (error) => {
@@ -113,18 +119,33 @@ export class ContactMeSectionComponent {
    * Toggles the display of the error and success images based on the input length.
    */
   onMessageInput() {
-    const messageLength = this.messageInput.nativeElement.value.trim().length;
+    if (this.messageInput && this.messageInput.nativeElement) {
+      const messageLength = (this.messageInput.nativeElement.value || '').trim().length;
 
-    if (messageLength >= 10) {
+      if (messageLength >= 10) {
         setTimeout(() => {
+          if (this.successImg && this.successImg.nativeElement) {
             this.successImg.nativeElement.style.display = 'flex';
+          }
+          if (this.errorImg && this.errorImg.nativeElement) {
             this.errorImg.nativeElement.style.display = 'none';
+          }
         }, 0);
-    } else {
-        this.successImg.nativeElement.style.display = 'none';
-        this.errorImg.nativeElement.style.display = 'block';
+      } else {
+        if (this.successImg && this.successImg.nativeElement) {
+          this.successImg.nativeElement.style.display = 'none';
+        }
+        if (this.errorImg && this.errorImg.nativeElement) {
+          this.errorImg.nativeElement.style.display = 'block';
+        }
+      }
     }
-}
+  }
+
+  ngAfterViewInit(): void {
+    // Ensure ViewChild elements are available
+    this.onMessageInput();
+  }
 
 }
 

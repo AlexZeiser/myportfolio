@@ -37,23 +37,36 @@
         <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
             <div class="form-name-email-message">
                 <div class="form-name-email">
-                    <input [(ngModel)]="contactData.name" type="text" id="name" name="name" [placeholder]="contactForm.controls['name']?.touched && contactForm.controls['name']?.invalid 
-                                        ? ('yourNameRequired' | translate) 
-                                        : ('yourName' | translate)"
-                        [ngClass]="{'error': contactForm.controls['name']?.touched && contactForm.controls['name']?.invalid}"
-                        required>
+                    <div class="form-field border-form-inputs">
+                        <input [(ngModel)]="contactData.name" type="text" id="name" name="name" [placeholder]="contactForm.controls['name']?.touched && contactForm.controls['name']?.invalid
+                                ? ('yourNameRequired' | translate)
+                                : ('yourName' | translate)"
+                            [ngClass]="{'error': contactForm.controls['name']?.touched && contactForm.controls['name']?.invalid}"
+                            required>
+                        <img *ngIf="contactForm.controls['name']?.touched && contactForm.controls['name']?.invalid"
+                            src="./../../assets/img/icon_required.svg" class="error-img" alt="Error Image">
+                        <img *ngIf="(contactData.name || '').trim().length > 0 && !contactForm.controls['name']?.invalid"
+                            src="./../../assets/img/icon_done.svg" class="success-img" alt="Success Image">
+                    </div>
 
-                    <input [(ngModel)]="contactData.email" type="email" id="email" name="email" [placeholder]="contactForm.controls['email']?.touched && contactForm.controls['email']?.invalid
-                                        ? ('yourEmailRequired' | translate) 
-                                        : ('yourEmail' | translate)"
-                        [ngClass]="{'error': contactForm.controls['email']?.touched && contactForm.controls['email']?.invalid}"
-                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
+                    <div class="form-field border-form-inputs">
+                        <input [(ngModel)]="contactData.email" type="email" id="email" name="email" [placeholder]="contactForm.controls['email']?.touched && contactForm.controls['email']?.invalid
+                                ? ('yourEmailRequired' | translate)
+                                : ('yourEmail' | translate)"
+                            [ngClass]="{'error': contactForm.controls['email']?.touched && contactForm.controls['email']?.invalid}"
+                            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
+                        <img *ngIf="contactForm.controls['email']?.touched && contactForm.controls['email']?.invalid"
+                            src="./../../assets/img/icon_required.svg" class="error-img" alt="Error Image">
+                        <img *ngIf="(contactData.email || '').trim().length > 0 && !contactForm.controls['email']?.invalid"
+                            src="./../../assets/img/icon_done.svg" class="success-img" alt="Success Image">
+                    </div>
                 </div>
-                <div class="form-message">
+
+                <div class="form-message border-form-inputs">
                     <textarea [(ngModel)]="contactData.message" id="message" name="message" (input)="onMessageInput()"
                         [placeholder]="contactForm.controls['message']?.touched && contactForm.controls['message']?.invalid
-                                                                ? ('yourMessageRequired' | translate) 
-                                                                : ('yourMessage' | translate)"
+                            ? ('yourMessageRequired' | translate) 
+                            : ('yourMessage' | translate)"
                         [ngClass]="{'error': contactForm.controls['message']?.touched && contactForm.controls['message']?.invalid}"
                         minlength="10" required #messageInput>
                     </textarea>
@@ -61,31 +74,34 @@
                     <img *ngIf="contactForm.controls['message']?.touched && contactForm.controls['message']?.invalid"
                         src="./../../assets/img/icon_required.svg" class="error-img" alt="Error Image" #errorImg>
                     <img src="./../../assets/img/icon_done.svg" class="success-img"
-                        [ngClass]="{'visible': contactData.message.trim().length >= 10}" alt="Success Image"
+                        [ngClass]="{'visible': ((contactData.message || '').trim().length >= 10)}" alt="Success Image"
                         #successImg>
                 </div>
             </div>
+
+
+
             <div class="form-checkbox-button">
                 <div class="form-checkbox">
                     <input type="checkbox" id="privacyPolicy" name="privacyPolicy"
                         [(ngModel)]="contactData.privacyPolicy" required>
                     <label for="privacyPolicy">
-                        <div id="i-read">{{ 'privacy_policy_read' | translate }}
-                            <span id="privacy">{{ 'privacy_policy' | translate }}</span>{{ 'privacy_policy_agree' |
-                            translate }}
+                        <div>{{ 'privacy_policy_read' | translate }}
+                            <span>{{ 'privacy_policy' | translate }}</span>{{ 'privacy_policy_agree' | translate }}
                         </div>
                     </label>
                     <div *ngIf="contactForm.controls['privacyPolicy']?.dirty && !contactData.privacyPolicy"
                         class="error-message">
                         {{ 'privacyPolicyRequired' | translate }}
                     </div>
-
                 </div>
                 <div class="form-button">
                     <button [disabled]="!isFormValid(contactForm)" type="submit">{{ 'send' | translate }}</button>
                 </div>
+                <div class="notification" *ngIf="showNotification">
+                    Nachricht erfolgreich verschickt!
+                </div>
             </div>
-
 
             <div id="form-checkbox-button-image" class="form-checkbox-button-image" style="display: none;">
                 <div id="form-checkbox-button-image-div" (click)="navigateToHeader()"></div>
@@ -106,5 +122,6 @@
                 </div>
             </div>
         </form>
+
     </div>
 </div>

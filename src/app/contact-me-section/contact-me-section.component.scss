@@ -3,7 +3,7 @@ input[type=email],
 select,
 textarea {
     padding: 12px;
-    border: 1.5px solid #02F4BF;
+    border: none;
     font-size: 18px;
     color: #02F4BF;
 
@@ -51,12 +51,50 @@ form {
     width: 100%;
 }
 
+.border-form-inputs {
+    border: 1.5px solid #02F4BF;
+}
+
 .form-name-email {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    width: 507px;
+
+    .form-field {
+        position: relative;
+
+        input {
+            width: 100%;
+        }
+
+        .error-img,
+        .success-img {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: none;
+        }
+
+        .error-img {
+            display: none;
+        }
+
+        .success-img {
+            display: none;
+        }
+
+        input.error+.error-img {
+            display: block;
+        }
+
+        input:not(.error)+.success-img {
+            display: block;
+        }
+    }
 }
+
+
 
 .contact-me-section-arrow {
     cursor: pointer;
@@ -73,14 +111,15 @@ form {
     }
 
     textarea {
-        flex-grow: 1; 
-        padding-right: 40px; 
+        flex-grow: 1;
+        padding-right: 40px;
     }
 
-    .error-img, .success-img {
+    .error-img,
+    .success-img {
         position: absolute;
-        right: 10px; 
-        bottom: 140px;       
+        right: 10px;
+        bottom: 140px;
     }
 
     .success-img {
@@ -91,7 +130,7 @@ form {
         display: flex;
     }
 
-    textarea.error + .error-img {
+    textarea.error+.error-img {
         display: block;
     }
 }
@@ -99,6 +138,7 @@ form {
 #name,
 #email {
     height: 56px;
+    width: 507px;
 }
 
 .error-message {
@@ -391,8 +431,8 @@ img {
     padding: 0;
 }
 
-input.error,
-textarea.error {
+.border-form-inputs:has(input.error),
+.border-form-inputs:has(textarea.error) {
     border: 1px solid red;
 }
 
@@ -401,11 +441,61 @@ textarea.error::placeholder {
     color: red;
 }
 
-.error-img{
+.error-img {}
 
+.success-img {}
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #04AA6D;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 1000;
 }
-.success-img{
 
+.notification.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.notification.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+.notification.fade-out {
+    animation: fadeOut 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
 }
 
 @import './contact-me-section.component.media.scss';
