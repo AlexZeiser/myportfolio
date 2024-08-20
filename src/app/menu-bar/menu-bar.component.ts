@@ -3,6 +3,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { filter } from 'rxjs';
+import AOS from 'aos';
 
 /**
  * The `MenuBarComponent` is responsible for rendering the application's navigation menu.
@@ -39,6 +40,7 @@ export class MenuBarComponent implements OnInit {
    * Sets up initial language and listens for router events to control visibility.
    */
   ngOnInit(): void {
+    AOS.init();
     // Set default language from local storage or fallback to 'en'
     const defaultLang = localStorage.getItem('language') || 'en';
     this.translateService.setDefaultLang(defaultLang);
@@ -50,7 +52,6 @@ export class MenuBarComponent implements OnInit {
     ).subscribe(() => {
       const currentUrl = this.router.url;
       this.isVisible = !(currentUrl === '/imprint' || currentUrl === '/privacy-policy');
-      window.scrollTo(0, 0);
     });
   }
 
@@ -148,7 +149,7 @@ export class MenuBarComponent implements OnInit {
   private scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 120;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - headerOffset;
 

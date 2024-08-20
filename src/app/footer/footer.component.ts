@@ -53,8 +53,7 @@ export class FooterComponent implements OnInit {
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
       const currentUrl = this.router.url;
-      this.isVisible = !(currentUrl === '/imprint' || currentUrl === '/privacy-policy');
-      window.scrollTo(0, 0);
+      this.isVisible = !(currentUrl === '/imprint' || currentUrl === '/privacy-policy');      
     });
   }
 

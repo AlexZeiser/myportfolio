@@ -17,8 +17,9 @@
 .hero-section-infos {
     display: flex;
     flex-direction: column;
-    gap: 160px;
+    gap: 160px;    
 }
+
 
 .hero-section-contact-arrow {
     display: flex;
@@ -30,6 +31,7 @@
 .hero-section-image img {
     width: 539px;
     height: 554px;
+    transition: transform 0.125s ease-out;
 }
 
 .hero-section-contact-me-button button {
@@ -89,5 +91,7 @@
     width: 34.2px;
     height: 60.85px;
 }
+
+
 
 @import './hero-section.component.media.scss';

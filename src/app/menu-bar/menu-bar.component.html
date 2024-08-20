@@ -1,5 +1,6 @@
 <div class="menu-bar" [ngClass]="{'menu-open': isMenuOpen}">
-    <div class="menu">
+    <div class="menu" data-aos="fade-right" data-aos-offset="800"
+    data-aos-easing="ease-in-sine">
         <div class="logo" [ngClass]="{'menu-open': isMenuOpen}">
             <span id="menu-bar-logo-name" [class.active]="activeButton === 'menu-bar-logo-name'"
                 (click)="navigateToHeader()">&lt; AZ &gt;</span>
@@ -33,7 +34,7 @@
 </div>
 
 <div class="burger-menu-div-open" *ngIf="isMenuOpen">
-    <div class="overlay-content">
+    <div class="overlay-content" data-aos="flip-up"> 
         <div class="menusystem menusystem-other-side" *ngIf="isVisible">
             <button class="ovelay-menu-fs" id="why-me-button" [class.active]="activeButton === 'why-me-button'"
                 (click)="navigateToWhyMe()">{{'header_AboutMe' | translate }}</button>

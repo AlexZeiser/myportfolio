@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import AOS from 'aos';
 
 /**
  * The `WhyMeSectionComponent` represents a section of the application where users can learn
@@ -14,7 +15,7 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './why-me-section.component.html',
   styleUrls: ['./why-me-section.component.scss']
 })
-export class WhyMeSectionComponent {
+export class WhyMeSectionComponent implements OnInit {
 
   /**
    * Creates an instance of `WhyMeSectionComponent`.
@@ -43,5 +44,8 @@ export class WhyMeSectionComponent {
         });
       }
     });
+  }
+  ngOnInit() {
+    AOS.init();
   }
 }

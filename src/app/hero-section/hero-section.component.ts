@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-
+import AOS from 'aos';
 /**
  * Component representing the hero section of the application.
  * Provides navigation to specific sections within the page.
@@ -14,7 +14,7 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './hero-section.component.html',
   styleUrls: ['./hero-section.component.scss']
 })
-export class HeroSectionComponent {
+export class HeroSectionComponent implements OnInit {
   
   /**
    * Constructs the HeroSectionComponent.
@@ -61,5 +61,8 @@ export class HeroSectionComponent {
         });
       }
     });
+  }
+  ngOnInit() {
+    AOS.init();
   }
 }

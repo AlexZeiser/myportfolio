@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import AOS from 'aos';
 
 /**
  * The `MyProjectsSectionComponent` is responsible for rendering the "My Projects" section of the application.
@@ -12,6 +13,9 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './my-projects-section.component.html',
   styleUrls: ['./my-projects-section.component.scss']
 })
-export class MyProjectsSectionComponent {
-  // Currently, this component does not have any properties or methods.
+export class MyProjectsSectionComponent implements OnInit {
+  ngOnInit() {
+    AOS.init();
+  }
+
 }

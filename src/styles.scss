@@ -10,13 +10,26 @@
     }
 }
 
+.app-content {
+    width: 100%;
+    margin: 0;
+}
+
+@media (min-width: 1920px) {
+    .app-content {
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+}
+
+
 /* roboto-mono-200 - latin */
 @font-face {
     font-display: swap;
     /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Roboto Mono';
     font-style: normal;
-    font-weight: 200;    
+    font-weight: 200;
     src: url('./assets/font/roboto-mono-v23-latin-200.woff2') format('woff2');
     /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }

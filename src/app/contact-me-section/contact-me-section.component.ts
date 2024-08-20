@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, ElementRef, inject, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, inject, ViewChild, AfterViewInit, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import AOS from 'aos';
 
 /**
  * Component for the "Contact Me" section of the application.
@@ -15,7 +16,7 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './contact-me-section.component.html',
   styleUrls: ['./contact-me-section.component.scss']
 })
-export class ContactMeSectionComponent implements AfterViewInit {
+export class ContactMeSectionComponent implements AfterViewInit, OnInit {
   /**
    * Constructor to inject the necessary dependencies.
    * @param {Router} router - The Angular Router used for navigation.
@@ -73,6 +74,10 @@ export class ContactMeSectionComponent implements AfterViewInit {
     return form.form.valid &&
       this.contactData.privacyPolicy &&
       (this.contactData.message || '').trim().length >= 10;
+  }
+
+  ngOnInit() {
+    AOS.init();
   }
 
   /**

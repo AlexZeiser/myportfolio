@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import AOS from 'aos';
 
 /**
  * The `MySkillsSectionComponent` represents the section of the application dedicated to displaying
@@ -13,7 +14,7 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './my-skills-section.component.html',
   styleUrls: ['./my-skills-section.component.scss']
 })
-export class MySkillsSectionComponent {
+export class MySkillsSectionComponent implements OnInit {
 
   /**
    * Constructs an instance of the `MySkillsSectionComponent`.
@@ -32,7 +33,7 @@ export class MySkillsSectionComponent {
     this.router.navigate([], { fragment: 'contact-me-container' }).then(() => {
       const element = document.getElementById('contact-me-container');
       if (element) {
-        const headerOffset = 100; // Offset to account for fixed header height
+        const headerOffset = 100;
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
@@ -42,5 +43,8 @@ export class MySkillsSectionComponent {
         });
       }
     });
+  }
+  ngOnInit() {
+    AOS.init();
   }
 }
