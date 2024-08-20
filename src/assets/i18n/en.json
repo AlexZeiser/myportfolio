@@ -42,5 +42,6 @@
     "phone": "Phone: <a class='adress-phone-email' href='tel:+4917622695088'>+49 (0) 17622695088</a>",
     "email": "EMail: <a class='adress-phone-email' href='mailto:alex.zeiser.rest@gmail.com'>alex.zeiser.rest@gmail.com</a>",
     "source": "https://www.e-recht24.de",
-    "source-text": "Source"
+    "source-text": "Source",
+    "sendNotification": "Message sent successfully!"
 }
