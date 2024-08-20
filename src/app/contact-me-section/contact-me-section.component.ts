@@ -15,7 +15,7 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './contact-me-section.component.html',
   styleUrls: ['./contact-me-section.component.scss']
 })
-export class ContactMeSectionComponent implements AfterViewInit  {
+export class ContactMeSectionComponent implements AfterViewInit {
   /**
    * Constructor to inject the necessary dependencies.
    * @param {Router} router - The Angular Router used for navigation.
@@ -87,20 +87,41 @@ export class ContactMeSectionComponent implements AfterViewInit  {
           next: (response) => {
             ngForm.resetForm();
             this.showNotification = true;
+            this.hideAllImages();
             setTimeout(() => {
+              const notificationDiv = document.querySelector('.notification');
+              if (notificationDiv) {
+                notificationDiv.classList.add('visible');
+              }
+            }, 10);
+            setTimeout(() => {
+              const notificationDiv = document.querySelector('.notification');
+              if (notificationDiv) {
+                notificationDiv.classList.remove('visible');
+              }
               this.showNotification = false;
-            }, 2000);
-
-            console.info('E-Mail erfolgreich gesendet');
+            }, 3000);
           },
           error: (error) => {
-            console.error('Fehler beim Senden der E-Mail:', error);
+
           },
-          complete: () => console.info('Sendevorgang abgeschlossen'),
         });
     } else if (ngForm.submitted && this.isFormValid(ngForm) && this.mailTest) {
       ngForm.resetForm();
-      console.info('MailTest aktiv, keine E-Mail gesendet');
+      this.showNotification = true;
+      this.hideAllImages();
+      setTimeout(() => {
+        this.showNotification = false;
+      }, 2000000);
+    }
+  }
+
+  hideAllImages() {
+    if (this.successImg && this.successImg.nativeElement) {
+      this.successImg.nativeElement.style.display = 'none';
+    }
+    if (this.errorImg && this.errorImg.nativeElement) {
+      this.errorImg.nativeElement.style.display = 'none';
     }
   }
 
@@ -148,4 +169,3 @@ export class ContactMeSectionComponent implements AfterViewInit  {
   }
 
 }
-

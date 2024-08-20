@@ -98,9 +98,9 @@
                 <div class="form-button">
                     <button [disabled]="!isFormValid(contactForm)" type="submit">{{ 'send' | translate }}</button>
                 </div>
-                <div class="notification" *ngIf="showNotification">
-                    Nachricht erfolgreich verschickt!
-                </div>
+            </div>
+            <div class="notification" *ngIf="showNotification">
+                Nachricht erfolgreich verschickt!
             </div>
 
             <div id="form-checkbox-button-image" class="form-checkbox-button-image" style="display: none;">

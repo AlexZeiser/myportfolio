@@ -1,0 +1,203 @@
+.email-div:hover #mail-icon {
+    background-image: url('./../../assets/img/icon_email_other.svg');
+}
+
+.phone-div-mobile:hover #phone-icon-mobile {
+    background-image: url('./../../assets/img/icon_phone_other.svg');
+}
+
+.email-div-mobile:hover #mail-icon-mobile {
+    background-image: url('./../../assets/img/icon_email_other.svg');
+}
+
+.headline-infos-mailPhone-mobile,
+.headline-infos-mailPhone {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    color: #02F4BF;
+
+    a {
+        color: #02F4BF;
+    }
+}
+
+#headline-info-mail-mobile,
+#headline-info-mail {
+    cursor: pointer;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+.form-checkbox-button {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.form-checkbox label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-top: 4px;
+    font-size: 14px;
+    line-height: 16.8px;
+    position: relative;
+    padding-left: 40px;
+    cursor: pointer;
+    user-select: none;
+
+    #i-read {
+        color: #02F4BF;
+    }
+
+    #privacy {
+        color: #E15544;
+        font-weight: 400;
+
+        &:hover {
+            font-weight: 700;
+        }
+    }
+
+    #and-agree {
+        color: #02F4BF;
+    }
+}
+
+.form-checkbox label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #E15544;
+    border-radius: 4px;
+    transition: background-color 0.125s;
+}
+
+.form-checkbox input[type="checkbox"]:hover+label::before {
+    background-color: #02F4BF;
+}
+
+.form-checkbox input[type="checkbox"]:checked+label::before {
+    border-color: #E15544;
+    background-color: #02F4BF;
+}
+
+.form-checkbox input[type="checkbox"]:checked+label::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 6px;
+    height: 10px;
+    border: solid #797EF3;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.form-button {
+    align-self: flex-end;
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 104px;
+        height: 52px;
+        padding: 15px 30px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21.6px;
+        border: solid 1px #827B7B;
+        color: #827B7B;
+        cursor: not-allowed;
+
+        &:enabled {
+            color: #E15544;
+            border-color: #02F4BF;
+            cursor: pointer;
+
+            &:hover {
+                color: #02F4BF;
+            }
+        }
+    }
+}
+
+#contact-me-section-arrow-div,
+#form-checkbox-button-image-div {
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+#contact-me-section-arrow-div {
+    background-image: url('./../../assets/img/arrow-up-icon.svg');
+    width: 22px;
+    height: 55px;
+    padding: 5px;
+}
+
+.contact-me-section-arrow:hover #contact-me-section-arrow-div {
+    background-image: url('./../../assets/img/arrow-up-icon-other.svg');
+    width: 36px;
+    height: 64.7px;
+    padding: 0;
+}
+
+#form-checkbox-button-image-div {
+    background-image: url('./../../assets/img/arrow-up-icon.svg');
+    width: 22px;
+    height: 55px;
+    padding: 5px;
+}
+
+.form-checkbox-button-image:hover #form-checkbox-button-image-div {
+    background-image: url('./../../assets/img/arrow-up-icon-other.svg');
+    width: 36px;
+    height: 64.7px;
+    padding: 0;
+}
+
+.border-form-inputs:has(input.error),
+.border-form-inputs:has(textarea.error) {
+    border: 1px solid red;
+}
+
+input.error::placeholder,
+textarea.error::placeholder {
+    color: red;
+}
+
+.error-img {}
+
+.success-img {}
+
+.notification {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    padding: 8px;
+    border-radius: 10px;
+    border: solid 1px #E15544;
+    color: #02F4BF;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.notification.visible {
+    opacity: 1;
+}
