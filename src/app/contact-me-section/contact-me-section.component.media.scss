@@ -97,7 +97,7 @@
     .form-checkbox-button-image {
         display: flex !important;
         align-self: end;
-    }    
+    }
 
     .email-div,
     .phone-div {
@@ -106,7 +106,21 @@
     }
 }
 
+@media screen and (max-width: 600px) {
+
+
+    #name,
+    #email {
+        width: 80%;
+    }
+}
+
 @media screen and (max-width: 500px) {
+    img {
+        width: 30px;
+        height: 30px;
+    }
+
     h2 {
         font-size: 30px;
     }
@@ -121,13 +135,15 @@
     select,
     textarea {
         &::placeholder {
-            font-size: 13px;
+            font-size: 10px;
         }
     }
-    #form-checkbox-button-image-div{
+
+    #form-checkbox-button-image-div {
         width: 14px;
         height: 40px;
     }
+
     .notification {
         font-size: 12px;
     }
