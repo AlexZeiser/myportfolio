@@ -30,7 +30,7 @@ export class MenuBarComponent implements OnInit {
   isVisible: boolean = true;
 
   /** Router instance for navigating between routes. */
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   /** TranslateService instance for managing language translations. */
   private translateService = inject(TranslateService);
@@ -135,9 +135,17 @@ export class MenuBarComponent implements OnInit {
   navigateToContactMe(): void {
     this.setActiveButton('contact-button');
     this.closeMenuIfOpen();
-
     this.router.navigate([], { fragment: 'contact-me-container' }).then(() => {
-      this.scrollToSection('contact-me-container');
+      const element = document.getElementById('contact-me-container');
+      if (element) {
+        const headerOffset = 180;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
     });
   }
 

@@ -168,8 +168,7 @@ export class ContactMeSectionComponent implements AfterViewInit, OnInit {
     }
   }
 
-  ngAfterViewInit(): void {
-    // Ensure ViewChild elements are available
+  ngAfterViewInit(): void {   
     this.onMessageInput();
   }
 

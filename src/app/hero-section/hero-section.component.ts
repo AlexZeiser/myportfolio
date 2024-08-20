@@ -31,7 +31,7 @@ export class HeroSectionComponent implements OnInit {
     this.router.navigate([], { fragment: 'why-me-section' }).then(() => {
       const element = document.getElementById('why-me-section');
       if (element) {
-        const headerOffset = 100;
+        const headerOffset = 120;
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.scrollY - headerOffset;
   
@@ -51,7 +51,7 @@ export class HeroSectionComponent implements OnInit {
     this.router.navigate([], { fragment: 'contact-me-container' }).then(() => {
       const element = document.getElementById('contact-me-container');
       if (element) {
-        const headerOffset = 100;
+        const headerOffset = 120;
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.scrollY - headerOffset;
   
@@ -62,6 +62,7 @@ export class HeroSectionComponent implements OnInit {
       }
     });
   }
+  
   ngOnInit() {
     AOS.init();
   }
