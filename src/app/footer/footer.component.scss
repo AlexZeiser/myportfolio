@@ -145,4 +145,21 @@
     }
 }
 
+.scroll-up-text {
+    display: none;
+    position: absolute;
+    background-color: #E15544;
+    color: #02F4BF;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    z-index: 1000;    
+    transform: translate(20px, -250%);
+}
+
+.footer-left .logo-name:hover + .scroll-up-text {
+    display: block;
+}
+
 @import './footer.component.media.scss';

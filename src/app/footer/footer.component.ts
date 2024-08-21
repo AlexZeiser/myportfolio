@@ -53,22 +53,39 @@ export class FooterComponent implements OnInit {
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
       const currentUrl = this.router.url;
-      this.isVisible = !(currentUrl === '/imprint' || currentUrl === '/privacy-policy');      
+      this.isVisible = !(currentUrl === '/imprint' || currentUrl === '/privacy-policy');     
     });
   }
 
   /**
-   * Sets the active footer button based on the button ID.
+   * Sets the active footer button based on the button ID and navigates to the target route.
    * @param {string} buttonId - The ID of the button to set as active.
+   * @param {string} route - The route to navigate to.
    */
-  setActiveFooterButton(buttonId: string): void {
+  setActiveFooterButton(buttonId: string, route: string): void {
     this.activeFooterButton = buttonId;
+    
+    // Navigiere zur Zielroute
+    this.router.navigate([route]).then(() => {
+      // Warte, bis die Navigation abgeschlossen ist
+      this.scrollToTop(); // Scrolle zum oberen Rand der Seite
+    });
   }
 
   /**
    * Scrolls the window to the top of the page with a smooth animation.
    */
   navigateToHeader(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  /**
+   * Scrolls the window to the top of the page with a smooth animation.
+   */
+  scrollToTop(): void {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'

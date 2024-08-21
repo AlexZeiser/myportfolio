@@ -66,4 +66,10 @@
     .privacy-policy-content {
         margin-top: 0px;
     }
+
+    @media screen and (max-width: 660px) {
+        .back-button {
+            text-align: center;
+        }
+    }
 }

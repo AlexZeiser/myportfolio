@@ -5,7 +5,8 @@
     </div>
 
     <div class="footer-left">
-        <span (click)="navigateToHeader()">&lt; AZ &gt;</span>
+        <span class="logo-name" (click)="navigateToHeader()">&lt; AZ &gt;</span>
+        <div id="scroll-up-text" class="scroll-up-text">Scroll up</div>
     </div>
 
     <div class="footer-middle">
@@ -19,7 +20,7 @@
         </div>
     </div>
 
-    <div class="footer-bottom">
+    <!-- <div class="footer-bottom">
         <div class="footer-menusystem-buttons">
             <a routerLink="/privacy-policy" id="legal-notice-link" *ngIf="isVisible"
                 [class.active]="activeFooterButton === 'legal-notice-btn'"
@@ -32,5 +33,20 @@
                 {{ 'impressum' | translate }}
             </a>
         </div>
+    </div> -->
+    <div class="footer-bottom">
+        <div class="footer-menusystem-buttons">
+            <a routerLink="/privacy-policy" id="legal-notice-link" *ngIf="isVisible"
+                [class.active]="activeFooterButton === 'legal-notice-btn'"
+                (click)="setActiveFooterButton('legal-notice-btn', '/privacy-policy')">
+                {{ 'legal_notice' | translate }}
+            </a>
+            <a routerLink="/imprint" id="impressum-link" *ngIf="isVisible"
+                [class.active]="activeFooterButton === 'impressum-btn'"
+                (click)="setActiveFooterButton('impressum-btn', '/imprint')">
+                {{ 'impressum' | translate }}
+            </a>
+        </div>
     </div>
+    
 </div>

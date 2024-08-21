@@ -147,6 +147,7 @@
             font-size: 30px;
             line-height: 0px;
             gap: 0px;
+            margin-top: 200px;
         }
 
         .my-projects-section {
@@ -189,6 +190,9 @@
             img {
                 width: 288px;
             }
+        }
+        #my-projects-section-div {
+            margin-top: 220px;
         }
     }
 }

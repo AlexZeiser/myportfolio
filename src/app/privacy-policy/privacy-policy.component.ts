@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MenuBarComponent } from "../menu-bar/menu-bar.component";
 import { FooterComponent } from "../footer/footer.component";
 import { TranslateModule } from '@ngx-translate/core';
+import { Location } from '@angular/common';
 
 /**
  * The `PrivacyPolicyComponent` represents the privacy policy page of the application.
@@ -15,5 +16,9 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrls: ['./privacy-policy.component.scss']
 })
 export class PrivacyPolicyComponent {
-  // Currently, this component does not have any additional logic or properties.
+  constructor(private location: Location) { }
+
+  goBack(): void {
+    this.location.back();
+  }
 }

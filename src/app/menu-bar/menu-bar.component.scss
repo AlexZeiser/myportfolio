@@ -1,9 +1,7 @@
 .menu-bar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-left: 33px;
-    margin-right: 33px;
+    align-items: center;    
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -129,5 +127,25 @@
     flex-direction: column;
     gap: 80px;
 }
+
+.scroll-up-text {
+    display: none; 
+    position: absolute;
+    left: 20px;
+    background-color: #E15544;
+    color: #02F4BF;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    z-index: 1000;
+    margin-top: 5px;
+}
+
+.logo-name:hover + .scroll-up-text {
+    display: block;
+}
+  
+  
 
 @import './menu-bar.component.media.scss';

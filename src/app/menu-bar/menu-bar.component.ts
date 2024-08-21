@@ -177,4 +177,30 @@ export class MenuBarComponent implements OnInit {
       this.isMenuOpen = false;
     }
   }
+  // Zeigt den Hover-Text an
+  showScrollText(event: MouseEvent): void {
+    const scrollText = document.getElementById('scroll-up-text');
+    if (scrollText) {
+      scrollText.style.left = `${event.pageX + 10}px`;
+      scrollText.style.top = `${event.pageY + 10}px`;
+      scrollText.classList.add('show');
+    }
+  }
+
+  // Versteckt den Hover-Text
+  hideScrollText(): void {
+    const scrollText = document.getElementById('scroll-up-text');
+    if (scrollText) {
+      scrollText.classList.remove('show');
+    }
+  }
+  // Aktualisiert die Position des Hover-Textes
+  updateScrollTextPosition(event: MouseEvent): void {
+    const scrollText = document.getElementById('scroll-up-text');
+    if (scrollText) {
+      scrollText.style.left = `${event.pageX + 10}px`;
+      scrollText.style.top = `${event.pageY + 10}px`;
+    }
+  }
+
 }

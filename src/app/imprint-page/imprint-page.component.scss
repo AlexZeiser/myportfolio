@@ -53,4 +53,28 @@ p {
     height: 62vh;
 }
 
+.back-button {
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-top: 20px;
+    display: inline-block;
+    font-weight: 500;
+    color: #E15544;
+    cursor: pointer;
+    transition: transform 0.125s ease, color 0.125s ease, padding 0.125s ease, border 0.125s ease;
+    text-decoration: none;
+    padding: 4px 20px; 
+    border-radius: 10px;
+    border: solid 1px #E15544;
+
+    &:hover {
+        transform: scale(1.1);
+        color: #02F4BF;
+        padding: 4px 20px;
+        border-radius: 10px;
+        border-color: #E15544;
+    }
+}
+
+
 @import './imprint-page.component.media.scss';

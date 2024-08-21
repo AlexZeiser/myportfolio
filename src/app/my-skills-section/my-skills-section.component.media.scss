@@ -51,7 +51,13 @@
 }
 
 @media screen and (max-width: 500px) {
+    .my-skills-text-with-img {        
 
+        img {
+           margin-bottom: 75px;
+        }        
+
+    }
     .my-skills-section {
         height: 70vh;
     }

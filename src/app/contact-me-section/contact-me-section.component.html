@@ -1,15 +1,15 @@
-<div id="contact-me-container" class="contact-me-container" data-aos="fade-up" data-aos-anchor-placement="top-center">
+<div id="contact-me-container" class="contact-me-container">
     <div class="contact-me-container-infos">
-        <div class="headline">
+        <div class="headline" data-aos="fade-up">
             <h2>{{'contact_me' | translate }}</h2>
             <img src="./../../assets/img/Arrow.svg" alt="">
         </div>
         <div class="headline-info">
-            <div class="headline-info-text">
+            <div class="headline-info-text" data-aos="zoom-out" data-aos-delay="250">
                 {{'still_not_sure' | translate }}
             </div>
             <div class="headline-info-other">
-                <div class="headline-info-mail-phone">
+                <div class="headline-info-mail-phone" data-aos="zoom-out" data-aos-delay="250">
                     <div class="email-div">
                         <div class="phone-mail" id="mail-icon"></div>
                         <span class="headline-infos-mailPhone" id="headline-info-mail">
@@ -35,7 +35,7 @@
     </div>
     <div class="container">
         <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-            <div class="form-name-email-message">
+            <div class="form-name-email-message" data-aos="zoom-out" data-aos-delay="250">
                 <div class="form-name-email">
                     <div class="form-field border-form-inputs">
                         <input [(ngModel)]="contactData.name" type="text" id="name" name="name" [placeholder]="contactForm.controls['name']?.touched && contactForm.controls['name']?.invalid
@@ -81,7 +81,7 @@
 
 
 
-            <div class="form-checkbox-button">
+            <div class="form-checkbox-button" data-aos="zoom-out" data-aos-delay="250">
                 <div class="form-checkbox">
                     <input type="checkbox" id="privacyPolicy" name="privacyPolicy"
                         [(ngModel)]="contactData.privacyPolicy" required>
@@ -99,14 +99,14 @@
                     <button [disabled]="!isFormValid(contactForm)" type="submit">{{ 'send' | translate }}</button>
                 </div>
             </div>
-            <div class="notification" *ngIf="showNotification">
+            <div class="notification" *ngIf="showNotification" data-aos="zoom-out" data-aos-delay="250">
                 {{'sendNotification' | translate}}
             </div>
 
-            <div id="form-checkbox-button-image" class="form-checkbox-button-image" style="display: none;">
+            <div id="form-checkbox-button-image" class="form-checkbox-button-image" style="display: none;" data-aos="zoom-out" data-aos-delay="250">
                 <div id="form-checkbox-button-image-div" (click)="navigateToHeader()"></div>
             </div>
-            <div class="headline-info-mail-phone-mobile" style="display: none;">
+            <div class="headline-info-mail-phone-mobile" style="display: none;" data-aos="zoom-out" data-aos-delay="250">
                 <div class="email-div-mobile">
                     <div class="phone-mail-mobile" id="mail-icon-mobile"></div>
                     <span class="headline-infos-mailPhone-mobile" id="headline-info-mail-mobile">
