@@ -10,9 +10,17 @@
     }
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .app-content {
     width: 100%;
     margin: 0;
+}
+
+.page-wrapper {
+    overflow-x: hidden;
 }
 
 @media (min-width: 1920px) {

@@ -76,6 +76,9 @@
 .my-projects-section-buttons {
     display: flex;
     gap: 24px;
+    button{
+        border: none;
+    }
 
     #github-btn a {
         width: 125px;
