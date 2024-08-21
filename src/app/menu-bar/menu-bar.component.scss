@@ -1,12 +1,14 @@
 .menu-bar {
     display: flex;
     justify-content: space-between;
-    align-items: center;    
+    align-items: center;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
     height: 100px;
     z-index: 1000;
+    margin-left: 333px;
+    margin-right: 333px;
     transition: z-index 0.125s ease;
 }
 
@@ -129,7 +131,7 @@
 }
 
 .scroll-up-text {
-    display: none; 
+    display: none;
     position: absolute;
     left: 20px;
     background-color: #E15544;
@@ -142,10 +144,10 @@
     margin-top: 5px;
 }
 
-.logo-name:hover + .scroll-up-text {
+.logo-name:hover+.scroll-up-text {
     display: block;
 }
-  
-  
+
+
 
 @import './menu-bar.component.media.scss';
