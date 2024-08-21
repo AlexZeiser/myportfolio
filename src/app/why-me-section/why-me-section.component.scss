@@ -3,7 +3,7 @@
     justify-content: space-between;
     margin-left: 333px;
     margin-right: 333px;
-    height: 50vh;
+    height: 53vh;
 }
 
 .why-me-section-image img {
@@ -64,12 +64,9 @@
 
 .why-me-section-relocation {
     display: flex;
-    /* justify-content: space-around; */
     justify-content: flex-end;
-    align-items: center;
-    /*  */
+    align-items: center;   
     gap: 340px;
-    /*  */
     span {
         display: flex;
         align-items: center;

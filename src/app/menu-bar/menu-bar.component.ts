@@ -40,7 +40,15 @@ export class MenuBarComponent implements OnInit {
    * Sets up initial language and listens for router events to control visibility.
    */
   ngOnInit(): void {
-    AOS.init();
+    AOS.init({
+      offset: 120,
+      delay: 0,
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false,
+    });
+
     // Set default language from local storage or fallback to 'en'
     const defaultLang = localStorage.getItem('language') || 'en';
     this.translateService.setDefaultLang(defaultLang);
@@ -176,31 +184,6 @@ export class MenuBarComponent implements OnInit {
     if (this.isMenuOpen) {
       this.isMenuOpen = false;
     }
-  }
-  // Zeigt den Hover-Text an
-  showScrollText(event: MouseEvent): void {
-    const scrollText = document.getElementById('scroll-up-text');
-    if (scrollText) {
-      scrollText.style.left = `${event.pageX + 10}px`;
-      scrollText.style.top = `${event.pageY + 10}px`;
-      scrollText.classList.add('show');
-    }
-  }
-
-  // Versteckt den Hover-Text
-  hideScrollText(): void {
-    const scrollText = document.getElementById('scroll-up-text');
-    if (scrollText) {
-      scrollText.classList.remove('show');
-    }
-  }
-  // Aktualisiert die Position des Hover-Textes
-  updateScrollTextPosition(event: MouseEvent): void {
-    const scrollText = document.getElementById('scroll-up-text');
-    if (scrollText) {
-      scrollText.style.left = `${event.pageX + 10}px`;
-      scrollText.style.top = `${event.pageY + 10}px`;
-    }
-  }
+  }  
 
 }
