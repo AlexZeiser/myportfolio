@@ -3,10 +3,18 @@
         margin-left: 233px;
         margin-right: 233px;
     }
+    .back-button {
+        margin-left: 233px;
+        margin-right: 233px;
+    }
 }
 
 @media screen and (max-width: 1760px) {
     .privacy-policy-content {
+        margin-left: 133px;
+        margin-right: 133px;
+    }
+    .back-button {
         margin-left: 133px;
         margin-right: 133px;
     }
@@ -17,11 +25,21 @@
         margin-left: 33px;
         margin-right: 33px;
     }
+    .back-button {
+        margin-left: 33px;
+        margin-right: 33px;
+    }
 }
 
 @media screen and (max-width: 1000px) {
     p {
         font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .back-button {
+        text-align: center;
     }
 }
 
@@ -65,11 +83,5 @@
 
     .privacy-policy-content {
         margin-top: 0px;
-    }
-
-    @media screen and (max-width: 660px) {
-        .back-button {
-            text-align: center;
-        }
-    }
+    }    
 }

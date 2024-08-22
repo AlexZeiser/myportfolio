@@ -16,9 +16,10 @@ import { Location } from '@angular/common';
   styleUrls: ['./imprint-page.component.scss']
 })
 export class ImprintPageComponent {
-  constructor(private location: Location) {}
+  constructor(private location: Location) { }
 
   goBack(): void {
     this.location.back();
   }
+ 
 }

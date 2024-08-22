@@ -20,6 +20,9 @@
 }
 
 @media screen and (max-width: 1400px) {
+    .headline-infos-mailPhone-mobile-dnone{
+        display: none;
+    }
     .phone-div-mobile {
         flex-direction: column;
         align-items: center;
@@ -116,6 +119,10 @@
 }
 
 @media screen and (max-width: 500px) {
+    .form-checkbox label {        
+        font-size: 12px;        
+    }
+
     img {
         width: 30px;
         height: 30px;

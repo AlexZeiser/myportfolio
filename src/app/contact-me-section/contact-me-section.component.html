@@ -13,7 +13,7 @@
                     <div class="email-div">
                         <div class="phone-mail" id="mail-icon"></div>
                         <span class="headline-infos-mailPhone" id="headline-info-mail">
-                            E-mail:&nbsp; <a href="mailto:alex.zeiser.rest@gmail.com">alex.zeiser.rest(at)gmail.com</a>
+                            E-mail:&nbsp; <a href="mailto:alex.zeiser.main@gmail.com">alex.zeiser.main&#64;gmail.com</a>
                         </span>
                     </div>
                     <br>
@@ -86,7 +86,7 @@
                     <input type="checkbox" id="privacyPolicy" name="privacyPolicy"
                         [(ngModel)]="contactData.privacyPolicy" required>
                     <label for="privacyPolicy">
-                        <div>{{ 'privacy_policy_read' | translate }}
+                        <div class="privacy-policy-require-color">{{ 'privacy_policy_read' | translate }}
                             <span>{{ 'privacy_policy' | translate }}</span>{{ 'privacy_policy_agree' | translate }}
                         </div>
                     </label>
@@ -110,14 +110,14 @@
                 <div class="email-div-mobile">
                     <div class="phone-mail-mobile" id="mail-icon-mobile"></div>
                     <span class="headline-infos-mailPhone-mobile" id="headline-info-mail-mobile">
-                        E-mail:&nbsp; <a href="mailto:alex.zeiser.rest@gmail.com">alex.zeiser.rest(at)gmail.com</a>
+                        <span class="headline-infos-mailPhone-mobile-dnone">E-mail:&nbsp;</span> <a href="mailto:alex.zeiser.main@gmail.com">alex.zeiser.main&#64;gmail.com</a>
                     </span>
                 </div>
                 <br>
                 <div class="phone-div-mobile">
                     <div class="phone-mail-mobile" id="phone-icon-mobile"></div>
                     <span class="headline-infos-mailPhone-mobile" id="headline-info-phone-mobile">
-                        Tel:&nbsp; <a href="tel:+4917622695088">0176 22695088</a>
+                        <span class="headline-infos-mailPhone-mobile-dnone">Tel:&nbsp;</span> <a href="tel:+4917622695088">0176 22695088</a>
                     </span>
                 </div>
             </div>

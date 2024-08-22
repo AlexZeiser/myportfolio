@@ -1,3 +1,24 @@
+@media screen and (max-width: 1860px) {
+    .back-button {
+        margin-left: 233px;
+        margin-right: 233px;
+    }
+}
+
+@media screen and (max-width: 1760px) {
+    .back-button {
+        margin-left: 133px;
+        margin-right: 133px;
+    }
+}
+
+@media screen and (max-width: 1560px) {
+    .back-button {
+        margin-left: 33px;
+        margin-right: 33px;
+    }
+}
+
 @media screen and (max-width: 660px) {
     p {
         font-size: 16px;
@@ -13,6 +34,10 @@
         font-size: 24px;
         text-align: center;
     }
+
+    .back-button {
+        text-align: center;
+    }
 }
 
 @media (max-width: 768px) {
@@ -20,11 +45,5 @@
         margin-left: 20px;
         margin-right: 20px;
         margin-top: 50px;
-    }
-}
-
-@media screen and (max-width: 660px) {
-    .back-button {
-        text-align: center;
     }
 }

@@ -18,12 +18,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent implements OnInit {
-  /**
-   * Stores the ID of the currently active footer button.
-   * @type {string}
-   */
-  activeFooterButton: string = '';
+export class FooterComponent implements OnInit { 
 
   /**
    * Controls the visibility of certain footer links.
@@ -62,13 +57,10 @@ export class FooterComponent implements OnInit {
    * @param {string} buttonId - The ID of the button to set as active.
    * @param {string} route - The route to navigate to.
    */
-  setActiveFooterButton(buttonId: string, route: string): void {
-    this.activeFooterButton = buttonId;
-    
-    // Navigiere zur Zielroute
-    this.router.navigate([route]).then(() => {
-      // Warte, bis die Navigation abgeschlossen ist
-      this.scrollToTop(); // Scrolle zum oberen Rand der Seite
+  setActiveFooterButton(buttonId: string, route: string): void {        
+  
+    this.router.navigate([route]).then(() => {     
+      this.scrollToTop(); 
     });
   }
 

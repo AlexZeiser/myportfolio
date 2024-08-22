@@ -187,6 +187,12 @@ h2 {
     display: flex;
 }
 
+.privacy-policy-require-color {
+    span {
+        color: #E15544;
+    }
+}
+
 .headline {
     display: flex;
     width: 425.05px;
@@ -196,7 +202,7 @@ h2 {
 
 .headline-info {
     display: flex;
-    gap: 40px;
+    gap: 70px;
     padding-bottom: 20px;
 }
 

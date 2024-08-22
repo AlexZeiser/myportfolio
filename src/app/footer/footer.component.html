@@ -1,7 +1,7 @@
 <div id="footer" class="footer">
     <div class="social-links-mobile">
         <a href="https://github.com/AlexZeiser" id="img-github-mobile" target="_blank"></a>
-        <a href="mailto:alex.zeiser.rest@gmail.com" id="img-email-mobile"></a>
+        <a href="mailto:alex.zeiser.main@gmail.com" id="img-email-mobile"></a>
     </div>
 
     <div class="footer-left">
@@ -15,24 +15,22 @@
             <span dir="footer-content-job-span">Alex Zeiser 2024</span>
             <div class="social-links">
                 <a href="https://github.com/AlexZeiser" id="img-github" target="_blank"></a>
-                <a href="mailto:alex.zeiser.rest@gmail.com" id="img-email"></a>
+                <a href="mailto:alex.zeiser.main@gmail.com" id="img-email"></a>
             </div>
         </div>
     </div>
-       
+
     <div class="footer-bottom">
         <div class="footer-menusystem-buttons">
             <a routerLink="/privacy-policy" id="legal-notice-link" *ngIf="isVisible"
-                [class.active]="activeFooterButton === 'legal-notice-btn'"
                 (click)="setActiveFooterButton('legal-notice-btn', '/privacy-policy')">
                 {{ 'legal_notice' | translate }}
             </a>
             <a routerLink="/imprint" id="impressum-link" *ngIf="isVisible"
-                [class.active]="activeFooterButton === 'impressum-btn'"
                 (click)="setActiveFooterButton('impressum-btn', '/imprint')">
                 {{ 'impressum' | translate }}
             </a>
         </div>
     </div>
-    
+
 </div>
