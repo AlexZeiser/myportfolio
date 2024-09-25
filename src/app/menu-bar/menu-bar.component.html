@@ -2,7 +2,7 @@
     <div class="menu">
         <div data-aos="fade-right" class="logo" [ngClass]="{'menu-open': isMenuOpen}">
             <span id="menu-bar-logo-name" class="logo-name" [class.active]="activeButton === 'menu-bar-logo-name'"
-                (click)="navigateToHeader()">&lt; AZ &gt;</span>            
+                (click)="navigateToHeader()">&lt; AZ &gt;</span>
             <div id="scroll-up-text" class="scroll-up-text">Scroll up</div>
         </div>
 
@@ -29,12 +29,30 @@
                 (click)="changeLanguage('en')">EN</span>
         </div>
     </div>
-    <div class="burger-menu" (click)="toggleMenu()">
-        <img *ngIf="!isMenuOpen" id="burger-menu-open" src="./../../assets/img/burger-menu-icon.svg"
-            alt="Burger Menu Icon">
-        <img *ngIf="isMenuOpen" id="burger-menu-close" src="./../../assets/img/burger-menu-icon-close.svg"
-            alt="Burger Menu Icon Close">
+    <div class="button-container">
+        <button class="color-button" [class.active]="activeTheme === 'alternative'"
+            (click)="changeToAlternativeTheme()">
+            Alternative
+        </button>
+        <span>|</span>
+        <button class="color-button" [class.active]="activeTheme === 'default'" (click)="changeToDefaultTheme()">
+            Standard
+        </button>
     </div>
+    <div class="burger-menu" (click)="toggleMenu()">
+        <svg *ngIf="!isMenuOpen" id="burger-menu-open" width="32" height="32" viewBox="0 0 32 32" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="var(--secondary-text-color)" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+        <svg *ngIf="isMenuOpen" id="burger-menu-close" width="32" height="32" viewBox="0 0 32 32" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 6l12 12M6 18L18 6" stroke="var(--secondary-text-color)" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </div>
+
 </div>
 
 <div class="burger-menu-div-open" *ngIf="isMenuOpen">

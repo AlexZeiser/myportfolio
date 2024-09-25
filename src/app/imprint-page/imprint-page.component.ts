@@ -21,5 +21,4 @@ export class ImprintPageComponent {
   goBack(): void {
     this.location.back();
   }
- 
 }

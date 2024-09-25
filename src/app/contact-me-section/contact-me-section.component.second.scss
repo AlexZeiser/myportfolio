@@ -15,16 +15,16 @@
     display: flex;
     align-items: center;
     margin-left: 10px;
-    color: #02F4BF;
+    color: var(--text-color);
 
     a {
-        color: #02F4BF;
+        color: var(--text-color);
     }
 }
 
 #headline-info-mail-mobile,
 #headline-info-mail {
-    cursor: pointer;
+    cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
 }
 
 img {
@@ -53,15 +53,15 @@ img {
     line-height: 16.8px;
     position: relative;
     padding-left: 40px;
-    cursor: pointer;
+    cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
     user-select: none;
 
     #i-read {
-        color: #02F4BF;
+        color: var(--text-color);
     }
 
     #privacy {
-        color: #E15544;
+        color: var(--secondary-text-color);
         font-weight: 400;
 
         &:hover {
@@ -70,7 +70,7 @@ img {
     }
 
     #and-agree {
-        color: #02F4BF;
+        color: var(--text-color);
     }
 }
 
@@ -81,18 +81,18 @@ img {
     top: 0;
     width: 18px;
     height: 18px;
-    border: 2px solid #E15544;
+    border: 2px solid var(--secondary-text-color);
     border-radius: 4px;
     transition: background-color 0.125s;
 }
 
 .form-checkbox input[type="checkbox"]:hover+label::before {
-    background-color: #02F4BF;
+    background-color: var(--text-color);
 }
 
 .form-checkbox input[type="checkbox"]:checked+label::before {
-    border-color: #E15544;
-    background-color: #02F4BF;
+    border-color: var(--secondary-text-color);
+    background-color: var(--text-color);
 }
 
 .form-checkbox input[type="checkbox"]:checked+label::after {
@@ -125,13 +125,17 @@ img {
         cursor: not-allowed;
 
         &:enabled {
-            color: #E15544;
-            border-color: #02F4BF;
-            cursor: pointer;
+            color: var(--secondary-text-color);
+            border-color: var(--text-color);
+            cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
 
             &:hover {
-                color: #02F4BF;
+                color: var(--text-color);
             }
+        }
+
+        &:disabled {
+            cursor: url('./../../assets/img/icons8-hand-cursor-50-disabled.png'), auto;
         }
     }
 }
@@ -140,7 +144,7 @@ img {
 #form-checkbox-button-image-div {
     background-size: cover;
     background-repeat: no-repeat;
-    cursor: pointer;
+    cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
 }
 
 #contact-me-section-arrow-div {
@@ -192,8 +196,8 @@ textarea.error::placeholder {
     height: 50px;
     padding: 8px;
     border-radius: 10px;
-    border: solid 1px #E15544;
-    color: #02F4BF;
+    border: solid 1px var(--secondary-text-color);
+    color: var(--text-color);
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }

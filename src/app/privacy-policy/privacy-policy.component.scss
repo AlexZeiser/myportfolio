@@ -4,45 +4,45 @@ h3,
 h4 {
     font-weight: 500;
     line-height: 64.8px;
-    color: #E15544;
+    color: var(--secondary-text-color);
 }
 
 p,
 li {
     font-size: 20px;
     font-weight: 500;
-    color: #02F4BF;
+    color: var(--text-color);
     padding-bottom: 16px;
 
     a {
         font-size: 30px;
         font-weight: 500;
-        color: #E15544;
+        color: var(--secondary-text-color);
         transition: transform 0.125s ease, color 0.125s ease, padding 0.125s ease, border 0.125s ease;
         text-decoration: none;
 
         &:hover {
             transform: scale(1.1);
-            color: #02F4BF;
+            color: var(--text-color);
             padding: 8px;
             border-radius: 10px;
-            border: solid 1px #E15544;
+            border: solid 1px var(--secondary-text-color);
         }
     }
 
     span {
-        color: #02F4BF;
+        color: var(--text-color);
     }
 
     strong {
-        color: #E15544;
+        color: var(--secondary-text-color);
     }
 }
 
 .contactBorder {
     padding: 8px;
     border-radius: 10px;
-    border: solid 1px #E15544;
+    border: solid 1px var(--secondary-text-color);
 }
 
 .privacy-policy-content {
@@ -60,20 +60,28 @@ li {
     margin-top: 20px;
     display: inline-block;
     font-weight: 500;
-    color: #E15544;
-    cursor: pointer;
+    color: var(--secondary-text-color);
+    cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
     transition: transform 0.125s ease, color 0.125s ease, padding 0.125s ease, border 0.125s ease;
     text-decoration: none;
-    padding: 4px 20px; 
+    padding: 4px 20px;
     border-radius: 10px;
-    border: solid 1px #E15544;
+    border: solid 1px var(--secondary-text-color);
+
+    span {
+        cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
+
+        svg {
+            cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
+        }
+    }
 
     &:hover {
         transform: scale(1.1);
-        color: #02F4BF;
+        color: var(--text-color);
         padding: 4px 20px;
         border-radius: 10px;
-        border-color: #E15544;
+        border-color: var(--secondary-text-color);
     }
 }
 

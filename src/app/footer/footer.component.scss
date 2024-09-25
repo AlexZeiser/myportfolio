@@ -15,10 +15,15 @@
         font-size: 34px;
         line-height: 34px;
         font-weight: 400;
-        color: #E15544;
-        cursor: pointer;
+        color: var(--secondary-text-color);
+        cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
     }
 
+}
+
+#legal-notice-link,
+#impressum-link {
+    cursor: url('./../../assets/img/sleep-e.png'), auto;
 }
 
 .footer-middle {
@@ -38,7 +43,7 @@
         font-size: 13px;
         font-weight: 500;
         line-height: 12px;
-        color: #E15544;
+        color: var(--secondary-text-color);
     }
 
     span {
@@ -47,7 +52,7 @@
         font-size: 23px;
         font-weight: 400;
         line-height: 27.6px;
-        color: #E15544;
+        color: var(--secondary-text-color);
     }
 }
 
@@ -70,29 +75,28 @@
 
     a {
         border: none;
-        color: #E15544;
+        color: var(--secondary-text-color);
         font-size: 14px;
         font-weight: 400;
         line-height: 16.8px;
-        cursor: pointer;
+        cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
 
         &:hover {
-            color: #02F4BF;
+            color: var(--text-color);
         }
 
         &.active {
-            color: #02F4BF;
-            border-bottom: 2px solid #02F4BF;
+            color: var(--text-color);
+            border-bottom: 2px solid var(--text-color);
         }
     }
 }
-
 
 .social-links {
 
     #img-github,
     #img-email {
-        cursor: pointer;
+        cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
         width: 30px;
         height: 29.26px;
         background-size: cover;
@@ -121,7 +125,7 @@
 
     #img-github-mobile,
     #img-email-mobile {
-        cursor: pointer;
+        cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
         width: 30px;
         height: 29.26px;
         background-size: cover;
@@ -148,17 +152,17 @@
 .scroll-up-text {
     display: none;
     position: absolute;
-    background-color: #E15544;
-    color: #02F4BF;
+    background-color: var(--secondary-text-color);
+    color: var(--text-color);
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
     font-size: 12px;
-    z-index: 1000;    
+    z-index: 1000;
     transform: translate(20px, -250%);
 }
 
-.footer-left .logo-name:hover + .scroll-up-text {
+.footer-left .logo-name:hover+.scroll-up-text {
     display: block;
 }
 

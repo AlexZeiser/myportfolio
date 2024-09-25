@@ -11,7 +11,7 @@
     font-size: 54px;
     font-weight: 500;
     line-height: 64.8px;
-    color: #E15544;
+    color: var(--secondary-text-color);
 }
 
 .my-skills {
@@ -20,7 +20,7 @@
 
     img {
         width: 100px;
-        height: 100px;
+        height: 100px;       
     }
 }
 
@@ -37,17 +37,18 @@
         width: 200px;
         height: 65px;
         padding: 15px 30px;
-        color: #0B042D;
-        background-color: #02F4BF;
+        color: var(--fourth-text-color);
+        background-color:var(--text-color);
         font-size: 15px;
         line-height: 21.6px;
         font-weight: 500;
-        cursor: pointer;
+        cursor: url('./../../assets/img/icons8-neuer-beitrag-50.png'), auto;
+        
         border: none;
 
         &:hover {
             transition: color 0.125s ease-in-out;
-            color: #E15544;
+            color: var(--secondary-text-color);
         }
     }
 }
@@ -119,7 +120,7 @@
 }
 
 .my-skills img {
-    cursor: pointer;
+    cursor: url('./../../assets/img/skills-cursor-icon.png'), auto;
 }
 
 .angular-div:hover {

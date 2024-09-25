@@ -13,7 +13,8 @@
                     <div class="email-div">
                         <div class="phone-mail" id="mail-icon"></div>
                         <span class="headline-infos-mailPhone" id="headline-info-mail">
-                            E-mail:&nbsp; <a href="mailto:kontakt@alex-zeiser-developer.de">kontakt&#64;alex-zeiser-developer.de</a>
+                            E-mail:&nbsp; <a
+                                href="mailto:kontakt@alex-zeiser-developer.de">kontakt&#64;alex-zeiser-developer.de</a>
                         </span>
                     </div>
                     <br>
@@ -86,9 +87,16 @@
                     <input type="checkbox" id="privacyPolicy" name="privacyPolicy"
                         [(ngModel)]="contactData.privacyPolicy" required>
                     <label for="privacyPolicy">
-                        <div class="privacy-policy-require-color">{{ 'privacy_policy_read' | translate }}
-                            <span>{{ 'privacy_policy' | translate }}</span>{{ 'privacy_policy_agree' | translate }}
+                        <div class="privacy-policy-require-color">
+                            {{ 'privacy_policy_read' | translate }}
+                            <span>
+                                <a [routerLink]="['/privacy-policy']"
+                                    (click)="toPrivacyPolicy('legal-notice-btn', '/privacy-policy')">{{ 'privacy_policy'
+                                    | translate }}</a>
+                            </span>
+                            {{ 'privacy_policy_agree' | translate }}
                         </div>
+
                     </label>
                     <div *ngIf="contactForm.controls['privacyPolicy']?.dirty && !contactData.privacyPolicy"
                         class="error-message">
@@ -103,21 +111,25 @@
                 {{'sendNotification' | translate}}
             </div>
 
-            <div id="form-checkbox-button-image" class="form-checkbox-button-image" style="display: none;" data-aos="zoom-out" data-aos-delay="250">
+            <div id="form-checkbox-button-image" class="form-checkbox-button-image" style="display: none;"
+                data-aos="zoom-out" data-aos-delay="250">
                 <div id="form-checkbox-button-image-div" (click)="navigateToHeader()"></div>
             </div>
-            <div class="headline-info-mail-phone-mobile" style="display: none;" data-aos="zoom-out" data-aos-delay="250">
+            <div class="headline-info-mail-phone-mobile" style="display: none;" data-aos="zoom-out"
+                data-aos-delay="250">
                 <div class="email-div-mobile">
                     <div class="phone-mail-mobile" id="mail-icon-mobile"></div>
                     <span class="headline-infos-mailPhone-mobile" id="headline-info-mail-mobile">
-                        <span class="headline-infos-mailPhone-mobile-dnone">E-mail:&nbsp;</span> <a href="mailto:kontakt@alex-zeiser-developer.de">kontakt&#64;alex-zeiser-developer.de</a>
+                        <span class="headline-infos-mailPhone-mobile-dnone">E-mail:&nbsp;</span> <a
+                            href="mailto:kontakt@alex-zeiser-developer.de">kontakt&#64;alex-zeiser-developer.de</a>
                     </span>
                 </div>
                 <br>
                 <div class="phone-div-mobile">
                     <div class="phone-mail-mobile" id="phone-icon-mobile"></div>
                     <span class="headline-infos-mailPhone-mobile" id="headline-info-phone-mobile">
-                        <span class="headline-infos-mailPhone-mobile-dnone">Tel:&nbsp;</span> <a href="tel:+4917622695088">0176 22695088</a>
+                        <span class="headline-infos-mailPhone-mobile-dnone">Tel:&nbsp;</span> <a
+                            href="tel:+4917622695088">0176 22695088</a>
                     </span>
                 </div>
             </div>

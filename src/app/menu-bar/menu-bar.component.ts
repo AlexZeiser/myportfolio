@@ -4,6 +4,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { filter } from 'rxjs';
 import AOS from 'aos';
+import { ColorThemeService } from '../color-theme.service';
 
 /**
  * The `MenuBarComponent` is responsible for rendering the application's navigation menu.
@@ -17,8 +18,12 @@ import AOS from 'aos';
   styleUrls: ['./menu-bar.component.scss']
 })
 export class MenuBarComponent implements OnInit {
-  /** Stores the currently active language. */
+  /** Stores the currently active language and theme. */
   activeLanguage: string = localStorage.getItem('language') || 'en';
+  activeTheme: string = 'default';
+
+  /** Stores the currently active color. */
+  activeColorTheme: string = localStorage.getItem('colorTheme') || 'default';
 
   /** Stores the ID of the currently active menu button. */
   activeButton: string = '';
@@ -30,7 +35,7 @@ export class MenuBarComponent implements OnInit {
   isVisible: boolean = true;
 
   /** Router instance for navigating between routes. */
-  constructor(private router: Router) { }
+  constructor(private router: Router, private colorThemeService: ColorThemeService) { }
 
   /** TranslateService instance for managing language translations. */
   private translateService = inject(TranslateService);
@@ -53,6 +58,10 @@ export class MenuBarComponent implements OnInit {
     const defaultLang = localStorage.getItem('language') || 'en';
     this.translateService.setDefaultLang(defaultLang);
     this.translateService.use(defaultLang);
+
+    // Set the color theme from local storage or fallback to 'default'
+    const savedTheme = localStorage.getItem('colorTheme') || 'default';
+    this.applyColorTheme(savedTheme);
 
     // Listen to router events to control visibility and scroll to top
     this.router.events.pipe(
@@ -184,6 +193,33 @@ export class MenuBarComponent implements OnInit {
     if (this.isMenuOpen) {
       this.isMenuOpen = false;
     }
-  }  
+  }
+
+  changeColorTheme(theme: string): void {
+    if (this.activeColorTheme !== theme) {
+      this.applyColorTheme(theme);
+      localStorage.setItem('colorTheme', theme);
+      this.activeColorTheme = theme;
+    }
+  }
+
+  private applyColorTheme(theme: string): void {
+    if (theme === 'default') {
+      this.colorThemeService.setDefaultTheme();
+    } else if (theme === 'alternative') {
+      this.colorThemeService.setAlternativeTheme();
+    }
+  }
+
+
+  changeToDefaultTheme(): void {
+    this.colorThemeService.setDefaultTheme();
+    this.activeTheme = 'default';
+  }
+
+  changeToAlternativeTheme(): void {
+    this.colorThemeService.setAlternativeTheme();
+    this.activeTheme = 'alternative';
+  }
 
 }

@@ -16,7 +16,7 @@
 .hero-section-infos {
     display: flex;
     flex-direction: column;
-    gap: 160px;    
+    gap: 160px;
 }
 
 
@@ -41,18 +41,19 @@
     height: 169px;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    border: solid 1px #02F4BF;
-    color: #E15544;
+    border: solid 1px var(--text-color);
+    color: var(--secondary-text-color);
     padding: 15px 30px;
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
     line-height: 21.6px;
-    cursor: pointer;
+    cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
     transition: color 0.125s ease-in-out;
 
     &:hover {
-        color: #02F4BF;
+        color: var(--text-color);
+        ;
     }
 }
 
@@ -66,14 +67,16 @@
     font-weight: 500;
     font-size: 54px;
     line-height: 64.8px;
-    color: #02F4BF;
+    color: var(--text-color);
+    ;
 }
 
 .hero-section-name {
     font-weight: 700;
     font-size: 82px;
     line-height: 98.4px;
-    color: #02F4BF;
+    color: var(--text-color);
+    ;
 }
 
 #hero-section-arrow-div {
@@ -82,7 +85,7 @@
     height: 50px;
     background-size: cover;
     background-repeat: no-repeat;
-    cursor: pointer;
+    cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
 }
 
 .hero-section-arrow:hover #hero-section-arrow-div {

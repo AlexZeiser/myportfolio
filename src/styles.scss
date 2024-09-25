@@ -1,18 +1,54 @@
+:root {
+    --background-color: #120B35;
+    --text-color: #02F4BF;
+    --secondary-text-color: #E15544;
+    --third-text-color: #02F4BF;
+    --fourth-text-color: #0B042D;
+    --border-color: #02F4BF;
+}
+
 * {
     margin: 0;
-    padding: 0;
-    background-color: #120B35;
-    color: #02F4BF;
+    padding: 0;    
+    background-color: var(--background-color);
+    color: var(--text-color);
     font-family: 'Roboto Mono';
     border: none;
 
     a {
         text-decoration: none;
+        cursor: url('./assets/img/icons8-cursor-50.png'), auto;
     }
+
+    cursor: url('./assets/img/icons8-cursor-50.png'),
+    auto;
 }
+
+
 
 body {
     overflow-x: hidden;
+}
+
+button,
+a {
+    cursor: url('./assets/img/icons8-hand-cursor-50.png'), auto;
+}
+
+#img-github-mobile,
+#img-email-mobile {
+    cursor: url('./assets/img/icons8-hand-cursor-50.png'), auto;
+}
+
+.form-checkbox label {
+    cursor: url('./assets/img/icons8-hand-cursor-50.png'), auto;
+}
+
+.why-me-section-talk-button {
+
+    button {
+        cursor: url('./assets/img/icons8-hand-cursor-50.png'), auto;
+    }
 }
 
 .app-content {
@@ -24,14 +60,16 @@ body {
     overflow-x: hidden;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 15px;
 }
-::-webkit-scrollbar-track{
+
+::-webkit-scrollbar-track {
     background: '#d1e5ff';
 }
-::-webkit-scrollbar-thumb{
-    background: linear-gradient(#120B35, #02F4BF);
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--background-color), var(--text-color));
     border-radius: 10px;
 }
 

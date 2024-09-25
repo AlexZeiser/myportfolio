@@ -15,7 +15,7 @@
     font-size: 54px;
     font-weight: 500;
     line-height: 64.8px;
-    color: #E15544;
+    color: var(--secondary-text-color);
 }
 
 #my-projects-section-div {
@@ -38,7 +38,7 @@
         font-size: 48px;
         font-weight: 700;
         line-height: 57.6px;
-        color: #02F4BF;
+        color: var(--text-color);
     }
 }
 
@@ -51,7 +51,7 @@
         font-size: 18px;
         font-weight: 400;
         line-height: 25.2px;
-        color: #02F4BF;
+        color: var(--text-color);
     }
 
 }
@@ -61,7 +61,7 @@
         font-size: 18px;
         font-weight: 400;
         line-height: 25.2px;
-        color: #02F4BF;
+        color: var(--text-color);
     }
 }
 
@@ -83,13 +83,13 @@
     #github-btn a {
         width: 125px;
         height: 52px;
-        border: solid 1px #02F4BF;
+        border: solid 1px var(--text-color);
         padding: 15px 30px;
         font-size: 18px;
         font-weight: 500;
         line-height: 21.6px;
-        color: #E15544;
-        cursor: pointer;
+        color: var(--secondary-text-color);
+        cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
     }
 
     #livetest-btn a {
@@ -99,22 +99,22 @@
         font-size: 18px;
         font-weight: 500;
         line-height: 21.6px;
-        background-color: #02F4BF;
-        color: #0B042D;
-        cursor: pointer;
+        background-color: var(--text-color);
+        color: var(--fourth-text-color);
+        cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
     }
 
     .github-btn a {
         &:hover {
             transition: color 0.125s ease-in-out !important;
-            color: #02F4BF !important;
+            color: var(--text-color) !important;
         }
     }
 
     .livetest-btn a {
         &:hover {
             transition: color 0.125s ease-in-out !important;
-            color: #E15544 !important;
+            color: var(--secondary-text-color) !important;
         }
     }
 

@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent implements OnInit { 
+export class FooterComponent implements OnInit {
 
   /**
    * Controls the visibility of certain footer links.
@@ -48,7 +48,7 @@ export class FooterComponent implements OnInit {
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
       const currentUrl = this.router.url;
-      this.isVisible = !(currentUrl === '/imprint' || currentUrl === '/privacy-policy');     
+      this.isVisible = !(currentUrl === '/imprint' || currentUrl === '/privacy-policy');
     });
   }
 
@@ -57,10 +57,10 @@ export class FooterComponent implements OnInit {
    * @param {string} buttonId - The ID of the button to set as active.
    * @param {string} route - The route to navigate to.
    */
-  setActiveFooterButton(buttonId: string, route: string): void {        
-  
-    this.router.navigate([route]).then(() => {     
-      this.scrollToTop(); 
+  setActiveFooterButton(buttonId: string, route: string): void {
+
+    this.router.navigate([route]).then(() => {
+      this.scrollToTop();
     });
   }
 

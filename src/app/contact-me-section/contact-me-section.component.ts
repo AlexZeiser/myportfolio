@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, inject, ViewChild, AfterViewInit, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import AOS from 'aos';
 
@@ -12,7 +13,7 @@ import AOS from 'aos';
 @Component({
   selector: 'app-contact-me-section',
   standalone: true,
-  imports: [FormsModule, TranslateModule, CommonModule],
+  imports: [FormsModule, TranslateModule, CommonModule, RouterLink, RouterLinkActive,],
   templateUrl: './contact-me-section.component.html',
   styleUrls: ['./contact-me-section.component.scss']
 })
@@ -121,6 +122,28 @@ export class ContactMeSectionComponent implements AfterViewInit, OnInit {
     }
   }
 
+  /**
+   * Sets the active footer button based on the button ID and navigates to the target route.
+   * @param {string} buttonId - The ID of the button to set as active.
+   * @param {string} route - The route to navigate to.
+   */
+  toPrivacyPolicy(buttonId: string, route: string): void {
+
+    this.router.navigate([route]).then(() => {
+      this.scrollToTop();
+    });
+  }
+
+  /**
+  * Scrolls the window to the top of the page with a smooth animation.
+  */
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
   hideAllImages() {
     if (this.successImg && this.successImg.nativeElement) {
       this.successImg.nativeElement.style.display = 'none';
@@ -168,7 +191,7 @@ export class ContactMeSectionComponent implements AfterViewInit, OnInit {
     }
   }
 
-  ngAfterViewInit(): void {   
+  ngAfterViewInit(): void {
     this.onMessageInput();
   }
 

@@ -15,14 +15,14 @@ import AOS from 'aos';
   styleUrls: ['./hero-section.component.scss']
 })
 export class HeroSectionComponent implements OnInit {
-  
+
   /**
    * Constructs the HeroSectionComponent.
    * @param {Router} router - The Angular Router for navigation.
    */
-  constructor(private router: Router) {  
-   }
-  
+  constructor(private router: Router) {
+  }
+
   /**
    * Navigates to the "Why Me" section of the page.
    * Scrolls smoothly to the section, accounting for a header offset.
@@ -34,7 +34,7 @@ export class HeroSectionComponent implements OnInit {
         const headerOffset = 120;
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.scrollY - headerOffset;
-  
+
         window.scrollTo({
           top: offsetPosition,
           behavior: 'smooth'
@@ -42,7 +42,7 @@ export class HeroSectionComponent implements OnInit {
       }
     });
   }
-  
+
   /**
    * Navigates to the "Contact Me" section of the page.
    * Scrolls smoothly to the section, accounting for a header offset.
@@ -54,7 +54,7 @@ export class HeroSectionComponent implements OnInit {
         const headerOffset = 120;
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.scrollY - headerOffset;
-  
+
         window.scrollTo({
           top: offsetPosition,
           behavior: 'smooth'
@@ -62,7 +62,7 @@ export class HeroSectionComponent implements OnInit {
       }
     });
   }
-  
+
   ngOnInit() {
     AOS.init();
   }
