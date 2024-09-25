@@ -24,7 +24,7 @@
 
 #headline-info-mail-mobile,
 #headline-info-mail {
-    cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
+    cursor: url('./../../assets/img/icons8-hand-cursor-30.png'), auto;
 }
 
 img {
@@ -53,7 +53,7 @@ img {
     line-height: 16.8px;
     position: relative;
     padding-left: 40px;
-    cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
+    cursor: url('./../../assets/img/icons8-hand-cursor-30.png'), auto;
     user-select: none;
 
     #i-read {
@@ -127,7 +127,7 @@ img {
         &:enabled {
             color: var(--secondary-text-color);
             border-color: var(--text-color);
-            cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
+            cursor: url('./../../assets/img/icons8-hand-cursor-30.png'), auto;
 
             &:hover {
                 color: var(--text-color);
@@ -135,7 +135,7 @@ img {
         }
 
         &:disabled {
-            cursor: url('./../../assets/img/icons8-hand-cursor-50-disabled.png'), auto;
+            cursor: url('./../../assets/img/icons8-hand-cursor-30-disabled.png'), auto;
         }
     }
 }
@@ -144,7 +144,7 @@ img {
 #form-checkbox-button-image-div {
     background-size: cover;
     background-repeat: no-repeat;
-    cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
+    cursor: url('./../../assets/img/icons8-hand-cursor-30.png'), auto;
 }
 
 #contact-me-section-arrow-div {

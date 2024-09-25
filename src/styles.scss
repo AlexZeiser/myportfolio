@@ -9,7 +9,7 @@
 
 * {
     margin: 0;
-    padding: 0;    
+    padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: 'Roboto Mono';
@@ -17,10 +17,11 @@
 
     a {
         text-decoration: none;
-        cursor: url('./assets/img/icons8-cursor-50.png'), auto;
+        cursor: url('./assets/img/icons8-cursor-30.png'), auto;
+
     }
 
-    cursor: url('./assets/img/icons8-cursor-50.png'),
+    cursor: url('./assets/img/icons8-cursor-30.png'),
     auto;
 }
 
@@ -32,22 +33,23 @@ body {
 
 button,
 a {
-    cursor: url('./assets/img/icons8-hand-cursor-50.png'), auto;
+    cursor: url('./assets/img/icons8-hand-cursor-30.png'), auto;
+
 }
 
 #img-github-mobile,
 #img-email-mobile {
-    cursor: url('./assets/img/icons8-hand-cursor-50.png'), auto;
+    cursor: url('./assets/img/icons8-hand-cursor-30.png'), auto;
 }
 
 .form-checkbox label {
-    cursor: url('./assets/img/icons8-hand-cursor-50.png'), auto;
+    cursor: url('./assets/img/icons8-hand-cursor-30.png'), auto;
 }
 
 .why-me-section-talk-button {
 
     button {
-        cursor: url('./assets/img/icons8-hand-cursor-50.png'), auto;
+        cursor: url('./assets/img/icons8-hand-cursor-30.png'), auto;
     }
 }
 

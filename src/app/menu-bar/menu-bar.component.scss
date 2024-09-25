@@ -108,14 +108,14 @@
     #change-language-english:hover {
         color: var(--text-color);
         ;
-        cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
+        cursor: url('./../../assets/img/icons8-hand-cursor-30.png'), auto;
     }
 
     #change-language-german.active,
     #change-language-english.active {
         color: var(--secondary-text-color);
         ;
-        cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
+        cursor: url('./../../assets/img/icons8-hand-cursor-30.png'), auto;
     }
 }
 
@@ -123,17 +123,17 @@
     display: none;
 
     img {
-        cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
+        cursor: url('./../../assets/img/icons8-hand-cursor-30.png'), auto;
     }
 
     #burger-menu-open {
-        cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
+        cursor: url('./../../assets/img/icons8-hand-cursor-30.png'), auto;
         width: 40px;
         height: 40px;
     }
 
     #burger-menu-close {
-        cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
+        cursor: url('./../../assets/img/icons8-hand-cursor-30.png'), auto;
         width: 40px;
         height: 40px;
     }
@@ -161,7 +161,7 @@
 }
 
 #menu-bar-logo-name {
-    cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
+    cursor: url('./../../assets/img/icons8-hand-cursor-30.png'), auto;
 }
 
 .burger-menu-div-open .menusystem,

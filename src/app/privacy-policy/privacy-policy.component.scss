@@ -61,7 +61,7 @@ li {
     display: inline-block;
     font-weight: 500;
     color: var(--secondary-text-color);
-    cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
+    cursor: url('./../../assets/img/icons8-hand-cursor-30.png'), auto;
     transition: transform 0.125s ease, color 0.125s ease, padding 0.125s ease, border 0.125s ease;
     text-decoration: none;
     padding: 4px 20px;
@@ -69,10 +69,10 @@ li {
     border: solid 1px var(--secondary-text-color);
 
     span {
-        cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
+        cursor: url('./../../assets/img/icons8-hand-cursor-30.png'), auto;
 
         svg {
-            cursor: url('./../../assets/img/icons8-hand-cursor-50.png'), auto;
+            cursor: url('./../../assets/img/icons8-hand-cursor-30.png'), auto;
         }
     }
 
