@@ -15,9 +15,9 @@ export class ColorThemeService {
   };
 
   private alternativeTheme = {
-    '--background-color': '#1E1E1E',
+    '--background-color': '#141416',
     '--text-color': '#ffffff',
-    '--secondary-text-color': '#FBEA4C',
+    '--secondary-text-color': '#00ADEF',
     '--third-text-color': '02F4BF',
     '--fourth-text-color': '#0B042D',
     '--border-color': '#FBEA4C'
